@@ -70,13 +70,21 @@ include_once("includes/nav_base.php");
 				'association' => 'Puzzleverein Österreich',
 				'icon' => 'austria.png'
 			),
-		'BE' => array(
-				'shortcut' => 'BE',
-				'name' => 'Belgium',
-				'link' => 'https://www.speedpuzzling.be/',
-				'association' => 'Speedpuzzling Belgium',
-				'icon' => 'belgium.png'
-			),
+        'BE' => array(
+            'shortcut' => 'BE',
+            'name' => 'Belgium',
+            'link' => 'https://www.facebook.com/PuzzlesBulgaria/',
+            'link' => 'https://www.speedpuzzling.be/',
+            'association' => 'Speedpuzzling Belgium',
+            'icon' => 'belgium.png'
+        ),
+        'BG' => array(
+            'shortcut' => 'BG',
+            'name' => 'Bulgaria',
+            'link' => 'https://www.facebook.com/PuzzlesBulgaria/',
+            'association' => 'Puzzles Bulgaria',
+            'icon' => 'bulgaria.png'
+        ),
 		'CZ' => array(
 				'shortcut' => 'CZ',
 				'name' => 'Czech Republic',
