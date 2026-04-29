@@ -34,6 +34,9 @@
                     <a class="nav-link" href="#publications">Publications</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="#events">Events</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="#contact">Contact</a>
                 </li>
             </ul>

@@ -87,6 +87,10 @@ body, html {
     background-image: url('../img/hands.jpg');
     min-height: 800px;
 }
+.bgimg_6{
+    background-image: url('../img/line.jpg');
+    min-height: 800px;
+}
 
 .parallax {
   position: relative;
@@ -147,6 +151,16 @@ body, html {
 	 font-weight: bold;
 }
 
+.capital_dark{
+    color: var(--grundfarbe-dunkelblau);
+}
+
+.dark_date{
+    color: var(--grundfarbe-dunkelblau);
+    font-size: 20px;
+    font-weight: bold;
+}
+
 @media all and (min-width: 0px) {
     .bgimg_1{
         min-height: 400px;
@@ -168,6 +182,10 @@ body, html {
         min-height: 150px;
     }
 
+    .bgimg_6{
+        min-height: 150px;
+    }
+
     .caption_intro {
         top: 10px;
     }
@@ -183,6 +201,10 @@ body, html {
     .capital{
         font-size: 15px;
     }
+    .capital{
+        font-size: 36px;
+    }
+
     .nav-link {
         font-size: 1em;
     }
@@ -211,6 +233,10 @@ body, html {
         min-height: 300px;
     }
 
+    .bgimg_6{
+        min-height: 300px;
+    }
+
     .caption_intro {
         top: 30%;
     }
@@ -227,6 +253,9 @@ body, html {
     }
     .capital{
         font-size: 24px;
+    }
+    .capital_dark {
+        font-size: 45px;
     }
     .nav-link {
         font-size: 1.3em;
@@ -278,6 +307,9 @@ body, html {
 }
 .association_img{
 	height: 100px;
+}
+.event_img{
+    max-width: 100%;
 }
 
 .country_flag {

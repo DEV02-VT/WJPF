@@ -422,6 +422,38 @@ include_once("includes/nav_base.php");
     </div>
 </div>
 
+<div class="bgimg_6 parallax">
+    <div class="caption" id="events">
+        <div class="row justify-content-center">
+            <div class="col-11 col-sm-9  col-md-7 col-lg-6 border text-start">
+                <span class="capital">Events</span>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="text-block"  >
+    <div class="row justify-content-center text-center mt-3 mb-3">
+        <a href="https://puzzledernegi.com/" target="_blank">
+        <div class="member-tile member_tile_frame">
+            <div class="row member_frame">
+                <div class="col-12 col-md-4 member_frame_image d-flex  align-items-center justify-content-center">
+                    <img class="event_img" src="img/event/puzzle_dernegi.png">
+                </div>
+            <div class="col-12 col-md-8 member_frame_name d-flex justify-content-center">
+                <div class="row">
+                    <div class="col-12 d-flex justify-content-center">
+                        <span class="capital capital_dark">European Jigsaw Puzzle Championships 2026</span>
+                    </div>
+                    <div class="col-12 d-flex justify-content-center">
+                        <span class="dark_date">27–29.11.2026 – İstanbul, Türkiye</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </a>
+    </div>
+</div>
+
 <div class="bgimg_4 parallax" id="contact">
 <div class="caption">
 	<div class="row justify-content-center">
