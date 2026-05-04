@@ -180,7 +180,6 @@ function update_user($user)
 
 function create_user($user)
 {
-    $id = escape($user['id']);
     $first_name = escape($user['first_name']);
     $last_name = escape($user['last_name']);
     $email = escape($user['email']);
@@ -241,6 +240,8 @@ function delete_user($id)
 		$user = get_user($id);
 		$sql = "DELETE FROM user WHERE id ='".escape($id)."'";
         query($sql);
+        if ($user['image'] != '')
+            unlink_image($user['image']);
         sql_commit();
     }
     catch(Exception $e)
@@ -304,7 +305,7 @@ function   display_board_users()
 //            print_r($board_user);
         echo '<div class="user-tile user-tile_frame">';
         echo '<div class="row user_frame">';
-        echo '<div class="col-12 user_frame_mage d-flex  align-items-center justify-content-center">';
+        echo '<div class="col-12 user_frame_image d-flex  align-items-center justify-content-center">';
         if ($board_user['image'] != '')
             echo '<img class="association_img" src="' . $board_user['image'] . '">';
         else

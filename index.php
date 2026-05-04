@@ -227,30 +227,13 @@ include_once("includes/nav_base.php");
         )
 	);
 
-        foreach ($countries as $country)
-        {
-            echo '<div class="user user_tile_frame">';
-            echo '<a href="' . $country['link'] . '" target="_blank">';
-                echo '<div class="row user_frame">';
-                    echo '<div class="col-12 user_frame_mage d-flex  align-items-center justify-content-center">';
-                        echo '<img class="association_img" src="img/association/' . $country['icon'] . '">';
-                        echo '</div>';
-                    echo '<div class="col-12 user_frame_name d-flex justify-content-center">';
-                        echo '<b>' . $country['association'] . '</b>';
-                        echo '</div>';
-                    echo '<div class="col-12 user_frame_name d-flex justify-content-center">';
-                        echo '<img class="country_flag" src="img/flags/' . $country['shortcut'] . '.png"> <b>' . $country['name'] . '</b>';
-                        echo '</div>';
-                    echo '</div>';
-                echo '</a>';
-            echo '</div>';
 
-        }
+            display_federation_associations();
         ?>
     </div>
 
 	<div class="row text-center mt-5">
-		<p>If your country is not represented here and you have a not-for-profit JPA, please contact us to become a user.</p>
+		<p>If your country is not represented here and you have a not-for-profit JPA, please contact us to become a member.</p>
 	</div>
 </div>
 

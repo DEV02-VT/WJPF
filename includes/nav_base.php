@@ -46,6 +46,7 @@
                            data-bs-toggle="dropdown" aria-expanded="false">Administration</a>
                         <ul class="dropdown-menu" aria-labelledby="navbarAdminDropdown">
                             <?php if (user_is_admin() || user_is_board_user()){ ?>
+                                <li><a class="dropdown-item" href="admin_association.php">Associations</a></li>
                                 <li><a class="dropdown-item" href="admin_user.php">User</a></li>
                             <?php } ?>
                         </ul>

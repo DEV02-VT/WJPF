@@ -43,6 +43,49 @@ function create_user_board_role_select( $id, $class, $selected, $required)
     echo '</select>';
 }
 
+function create_association_type_select( $id, $class, $selected, $required)
+{
+    global $glb_association_type;
+    if ($required)
+    {
+        $required = 'required';
+    }
+    else
+    {
+        $required = '';
+    }
+    natcasesort ($glb_association_type);
+
+    echo '<select id="' . $id . '" name="' . $id . '" class ="' . $class . '" ' . $required . '>';
+    foreach ($glb_association_type  as $key => $value)
+    {
+        echo '<option value="' . $key . '"' . (($selected == $key) ? ' selected="selected"' : '') . '>'. $value . '</option>\n';
+    }
+    echo '</select>';
+}
+
+function create_association_filter_select( $id, $class, $selected, $required)
+{
+    global $glb_association_filter;
+    if ($required)
+    {
+        $required = 'required';
+    }
+    else
+    {
+        $required = '';
+    }
+    natcasesort ($glb_association_filter);
+
+    echo '<select id="' . $id . '" name="' . $id . '" class ="' . $class . '" ' . $required . '>';
+    echo '<option value="-1"' . (($selected == -1) ? ' selected="selected"' : '') . '></option>\n';
+    foreach ($glb_association_filter  as $key => $value)
+    {
+        echo '<option value="' . $key . '"' . (($selected == $key) ? ' selected="selected"' : '') . '>'. $value . '</option>\n';
+    }
+    echo '</select>';
+}
+
 function create_article_type_select( $id, $class, $selected, $required)
 {
 	global $glb_article_types;

@@ -124,18 +124,11 @@ switch ($action)
             }
             if (count($old) > 0)
             {
-                if (merge_registered_participant($old, $user))
-                {
-                    $retdata['status'] = get_user_status($old['id']);
-                    echo json_encode($retdata);
-                    return;
-                }
                 $retdata['error'] =  "Person already stored";
                 echo json_encode($retdata);
                 return;
             }
             $retdata['error'] =  create_user($user);
-            $retdata['status'] = $user['status'];
         }
         break;
 	case 'Delete':

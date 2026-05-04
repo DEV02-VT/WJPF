@@ -185,7 +185,7 @@ $lang = get_language();
     <div class="modal-dialog  modal-dialog-small" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Mitglied löschen</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Delete User</h5>
           <button type="button" class="close btn btn-secondary" data-bs-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -200,8 +200,8 @@ $lang = get_language();
           </form>
         </div>
         <div class="modal-footer">
-          <button type="button" name="deleteUser" id="deleteUser" form="modal-details" class="btn btn-dark">Ja</button>
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Nein</button>
+          <button type="button" name="deleteUser" id="deleteUser" form="modal-details" class="btn btn-dark">Yes</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
         </div>
       </div>
     </div>

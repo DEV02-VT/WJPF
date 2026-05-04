@@ -30,7 +30,7 @@ $(document).ready(function() {
 		"order": [[1, "asc"]],
 		"columnDefs": [
 			//zusätzliche Spalten ausblenden. Trotzdem kann nach ihnen gesucht werden
-			{"targets": [8, 9, 10, 11, 12, 13], "visible": false},
+			{"targets": [8, 9, 10, 11, 12, 13, 14, 15], "visible": false},
 			{"targets": [0, 7], "orderable": false},
 			{responsivePriority: 1, targets: [0, 1, 7]},
 			{responsivePriority: 2, targets: -1}

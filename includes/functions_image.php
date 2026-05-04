@@ -41,10 +41,9 @@ function add_image($type, $id, $image, $filename, &$new_filename)
             {
                 return $error;
             }
-            make_thumb('img/association/tmp/', $new_filename, 'img/association/'. $id . '/thumbs/', $new_filename, GLB_IMAGE_SIZE_ARTICLE_THUMB);
-            make_thumb('img/association/tmp/', $new_filename, 'img/association/'. $id . '/medium/', $new_filename, GLB_IMAGE_SIZE_ARTICLE_MEDIUM);
+            make_thumb('img/association/tmp/', $new_filename, 'img/association/', $new_filename, GLB_IMAGE_SIZE_ARTICLE_MEDIUM);
             unlink_image('img/association/tmp/' . $new_filename);
-            $new_filename = 'img/user/' . $new_filename;
+            $new_filename = 'img/association/' . $new_filename;
             break;
 		default:
 			return 'Unbekannter Typ';

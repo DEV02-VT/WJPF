@@ -54,7 +54,7 @@ CREATE TABLE user
   PRIMARY KEY (id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-CREATE TABLE member
+CREATE TABLE association
 (
     id                        int NOT NULL auto_increment,
     type                      int DEFAULT 1 NOT NULL,
@@ -62,7 +62,7 @@ CREATE TABLE member
     registration_number       varchar(70)  CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
     foundation_date	 		  DATE,
     tax_id                    varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci,
-    country_code              varchar(2)  NOT NULL,
+    nationality_code          varchar(2)  NOT NULL,
     member_count              int DEFAULT 0 NOT NULL,
     street 					  varchar(100) NOT NULL,
     house_number 			  varchar(20) NOT NULL,
@@ -75,20 +75,21 @@ CREATE TABLE member
     phone		              varchar(40) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
     begin_of_membership		  DATE,
     end_of_membership		  DATE,
-    last_login		 		  DATETIME,
     comment                   TEXT,
     member          		  tinyint(1) DEFAULT 0 NOT NULL,
+    image                     varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
 
     PRIMARY KEY (id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-CREATE TABLE member_admin
+CREATE TABLE association_admin
 (
     id                  int NOT NULL auto_increment,
-    member_id    	    int NOT  null,
+    association_id    	int NOT  null,
     user_id             int NOT NULL,
     role                varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci,
 
     PRIMARY KEY (id),
-    constraint `fk_member_admin_user` foreign key (user_id) references user (id) on delete cascade
+    constraint `fk_association_admin_association` foreign key (association_id) references association (id) on delete cascade,
+    constraint `fk_association_admin_user` foreign key (user_id) references user (id) on delete cascade
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
