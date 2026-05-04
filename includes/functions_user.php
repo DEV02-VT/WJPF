@@ -520,7 +520,19 @@ function get_current_user_name()
     }
     return '';
 }
-
+function CheckLogin() // checks if a user or a participant is logged in otherwise redirects to login
+{
+    if (logged_in())
+    {
+        $_SESSION['link_to'] = '';
+    }
+    else
+    {
+        $_SESSION['link_to'] = $_SERVER['REQUEST_URI'];
+        redirect("login.php");
+        exit;
+    }
+}
 
 function CheckUserLogin() // checks if a user is logged in otherwise redirects to login
 {
