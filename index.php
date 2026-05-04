@@ -19,7 +19,7 @@ include_once("includes/nav_base.php");
    <div class="text-block">
      <h3 style="text-align:center;">What is WJPF</h3>
      <p>The World Jigsaw Puzzle Federation was founded in 2025 from puzzle enthusiasts from all over the world. A Federation to coordinate competitive puzzling and to connect, represent, and unite all the different associations.
-   The committee recognizes maximum 1 not-for-profit Jigsaw Puzzle Association (JPA) per country. Member JPAs share and follow the objectives that are laid out by the WJPF. Members can use the network of the WJPF for best practices and to learn from other associations.</p><br><br><p>
+   The committee recognizes maximum 1 not-for-profit Jigsaw Puzzle Association (JPA) per country. Member JPAs share and follow the objectives that are laid out by the WJPF. Members can use the network of the WJPF for best practices and to learn from other associations.</p><p>
            These are the key responsibilities of the WJPF:<br><br>
            - Coordinate the World Jigsaw Puzzle Championship (WJPC)<br>
            - Appoint the yearly rotating host country<br>
@@ -266,7 +266,7 @@ include_once("includes/nav_base.php");
 <div class="text-block"  id="board">
     <div class="row justify-content-center text-center">
         <div class="col-11 col-sm-9  col-md-7">
-            <p>The ECJP is managed by a board of 11 people who were elected in Valladolid by the representatives of each country present. Every year, at the open General Assembly (to be held at the yearly EJPC and to be attended by all user JPAs), board user elections will be held and the host for the next EJPC is revealed. Only half of the board user positions are open for election every year. The year between brackets next to a board user shows the end of their term.</p>
+            <p>The WJPF is managed by a board of 9 people who were elected at the General Assembly by the representatives of each member association. You can contact each member of the board directly or via the central E-Mail <a href="mailto:board@wjpf.org">board@wjpf.org</img></a></p>
         </div>
     </div>
 

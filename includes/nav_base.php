@@ -30,12 +30,13 @@
                 <li class="nav-item">
                     <a class="nav-link" href="index.php#board">Board</a>
                 </li>
-                <li class="nav-item">
+<!--                <li class="nav-item">
                     <a class="nav-link" href="index.php#publications">Publications</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="index.php#events">Events</a>
                 </li>
+                -->
                 <li class="nav-item">
                     <a class="nav-link" href="index.php#contact">Contact</a>
                 </li>
