@@ -1,0 +1,18 @@
+table td {
+	padding: 5px;
+}
+
+.desktop_table {
+	font-size: 16px;
+	line-height: 18px;
+	letter-spacing: 0.5px;
+}
+
+.dataTables_wrapper .dataTables_length {
+    padding-top: 0.355em;
+	padding-left: 0.355em;
+}
+
+.meeting_detail_table td {
+	padding-left: 0px;
+}

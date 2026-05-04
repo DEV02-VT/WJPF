@@ -1,11 +1,11 @@
 :root {
 
 /* Colors: */
-    --grundfarbe-hellblau: #0EC0D7;
+    --grundfarbe-hellblau: #8ebbe5;
     --grundfarbe-dunkelblau: #02335E;
-    --grundfarbe-gruen: #5FAA2B;
+    --grundfarbe-gruen: #a1bf38;
 
-    --bs-border-color: #02335E;
+    --bs-border-color: #a1bf38;
     --bs-border-width: 6px;
 
 --text-color: #2B2B2B;
@@ -21,12 +21,11 @@
     --grundfarbe-hell: #F3F3F3;
     --primary-color: #8EC9CF;
     */
- */
     /*
     --secundary-color: #5B8284;
     --ss-primary-color: #5B8284;
     */
---secundary-color: #E5539C;
+--secundary-color: #a1bf38;
 --ss-primary-color: #E5539C;
 
 
@@ -41,6 +40,10 @@
 body, html {
   height: 100%;
   margin: 0px;
+}
+
+.div_hidden {
+    display: none;
 }
 
 .navbar {
@@ -112,13 +115,13 @@ body, html {
     top: 30%;
     width: 100%;
     text-align: center;
-    color: var(--grundfarbe-dunkelblau);
+    color: var(--grundfarbe-gruen);
     padding: 20px;
 }
 
 .caption_intro div.border {
     background-color: var(--grundfarbe-hell);
-    color: var(--grundfarbe-dunkelblau);
+    color: var(--grundfarbe-gruen);
     padding: 18px;
     font-size: 40px;
     letter-spacing: 10px;
@@ -138,7 +141,7 @@ body, html {
 
 .caption div.border {
     background-color: var(--grundfarbe-hell);
-    color: var(--grundfarbe-dunkelblau);
+    color: var(--grundfarbe-gruen);
     padding: 18px;
     font-size: 40px;
     letter-spacing: 10px;
@@ -152,11 +155,11 @@ body, html {
 }
 
 .capital_dark{
-    color: var(--grundfarbe-dunkelblau);
+    color: var(--grundfarbe-gruen);
 }
 
 .dark_date{
-    color: var(--grundfarbe-dunkelblau);
+    color: var(--grundfarbe-gruen);
     font-size: 20px;
     font-weight: bold;
 }
@@ -328,11 +331,11 @@ body, html {
     background: var(--grundfarbe-hell) 0% 0% no-repeat padding-box;
 }
 
-.member_tile_frame {
+.user_tile_frame {
     padding: 0 1em;
 }
 
-.member_frame {
+.user_frame {
     padding: 1em;
     margin-bottom: 20px;
     border-radius: 17px;
@@ -340,12 +343,12 @@ body, html {
     min-height: 250px;
 }
 
-.member-tile a {
+.user-tile a {
         color: var(--text-color);
         text-decoration: none;
     }
 
-.board-member-grid {
+.board-user-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
@@ -398,5 +401,222 @@ body, html {
     width: 100%;
 }
 
+.login_logo{
+    width: 36px;
+    margin-left:5px;
+    margin-top:15px;
 }
+
+.title-container {
+    height: 164px;
+    width: 100%;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.title-container img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    object-fit: cover;
+    z-index: 0;
+    object-position: 70% 70%;
+    opacity: 0.36;
+}
+
+/* Just styling the content of the div, the *magic* in the previous rules */
+.title-container .caption {
+    z-index: 1;
+    position: relative;
+    text-align: center;
+    padding: 10px;
+    top: 0;
+}
+
+.title-container-text {
+    height: 164px;
+    line-height: 164px;
+}
+
+.title-container-text h1{
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.title-container-event {
+    margin-bottom: 0px;
+}
+
+.largercheckbox input[type="radio"], .largercheckbox input[type=checkbox] {
+    width: 20px;
+    height: 20px;
+    accent-color: var(--secundary-color);
+}
+.largercheckbox input[type="radio"] :checked, .largercheckbox input[type=checkbox] :checked {
+    margin-left: 25px;
+    border: 1px solid blue; }
+.largercheckbox input[type=checkbox]:checked + label {
+    font-weight: bold; }
+.largercheckbox label {
+    margin-left: 5px;
+    margin-top: -10px; }
+
+.table_icon, .table_button {
+    width: 2em;
+    height: 2em;
+}
+.table_img {
+    width: 1.4em;
+}
+
+.table_button {
+    cursor: pointer;
+}
+
+.full_container {
+    width: 100%;
+    padding-right: 2%;
+    padding-left: 2%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 20px;
+}
+
+@media all and (min-width: 576px) {
+    .modal-dialog {
+        font-size: 1rem;
+        max-width: 550px;
+    }
+
+    .modal-dialog-large {
+        font-size: 1rem;
+        max-width: 95%;
+    }
+
+    .modal-dialog-medium {
+        margin-top: 3em;
+        max-width: 475px;
+    }
+
+    .modal-dialog-small {
+        max-width: 400px;
+    }
+
+    h1 {
+        font-size: 60px;
+        line-height: 64px;
+    }
+    .before-footer {
+        width: 100%;
+        height: 120px;
+    }
+}
+@media all and (min-width: 768px) {
+    .modal-dialog {
+        max-width: 700px;
+    }
+
+    .modal-dialog-large {
+        max-width: 95%;
+    }
+
+    .modal-dialog-medium {
+        max-width: 550px;
+    }
+
+    .modal-dialog-small {
+        max-width: 400px;
+    }
+    .before-footer {
+        width: 100%;
+        height: 100px;
+    }
+}
+@media all and (min-width: 992px) {
+    .modal-dialog {
+        max-width: 850px;
+    }
+
+    .modal-dialog-large {
+        max-width: 95%;
+    }
+
+    .modal-dialog-medium {
+        max-width: 625px;
+    }
+
+    .modal-dialog-small {
+        max-width: 400px;
+    }
+}
+@media all and (min-width: 1200px) {
+    .modal-dialog {
+        max-width: 1100px;
+    }
+
+    .modal-dialog-large {
+        max-width: 95%;
+    }
+
+    .modal-dialog-medium {
+        max-width: 750px;
+    }
+
+    .modal-dialog-small {
+        max-width: 400px;
+    }
+}
+
+.block-titel {
+    font-family: var(--secondary-font-bold);
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 0.6px;
+    color: var(--secundary-color);
+    border-bottom: solid;
+    border-color: var(--secundary-color);
+    margin-bottom: 5px;
+}
+
+.preview_image{
+    height: 150px;
+    width: auto;
+    max-width: 100%;
+}
+
+.preview_image_btn{
+    --bs-btn-padding-x: 0.175rem;
+    --bs-btn-padding-y: 0;
+    width: 80px;
+}
+
+.mail_image{
+    height: 1.5em;
+}
+
+#overlay {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background-color: #fefefe;
+    opacity: 0.7;
+    z-index: 100000000;
+    background: rgba(255, 255, 255, 0.8) url(../img/ajax-loader.gif) 50% 50% no-repeat;
+}
+
+#overlay_message {
+    font-weight: bold;
+    text-align: center;
+    position: absolute;
+    top: 40%;
+    width: 100%;
+}
+
+
+
 

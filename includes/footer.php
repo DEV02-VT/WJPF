@@ -11,7 +11,8 @@
 
 <script src="js/jquery/3.7.1/jquery-3.7.1.js"></script>
 <script src="js/bootstrap/5.3.1/bootstrap.bundle.min.js"></script>
-
+<script src="js/datatables/1.13.6/datatables.min.js"></script>
+<script src="js/base.js"></script>
 
 <script>
     // Get the button
