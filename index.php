@@ -233,7 +233,7 @@ include_once("includes/nav_base.php");
     </div>
 
 	<div class="row text-center mt-5">
-		<p>If your country is not represented here and you have a not-for-profit JPA, please contact us to become a member.</p>
+		<p>Your country is not represented here and you have a not-for-profit JPA? You can download our <a target="_blank" href="documents/WJPF Official Membership Application Form.pdf">Membership Application Form</a> to become a member.</p>
 	</div>
 </div>
 
