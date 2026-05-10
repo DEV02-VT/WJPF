@@ -155,6 +155,7 @@ body, html {
 }
 
 .capital_dark{
+    font-size: 36px;
     color: var(--grundfarbe-gruen);
 }
 
@@ -186,7 +187,7 @@ body, html {
     }
 
     .bgimg_6{
-        min-height: 150px;
+        min-height: 250px;
     }
 
     .caption_intro {
@@ -202,10 +203,10 @@ body, html {
         font-size: 12px;
     }
     .capital{
-        font-size: 15px;
-    }
-    .capital{
         font-size: 36px;
+    }
+    .capital_dark{
+        font-size: 136x;
     }
 
     .nav-link {
@@ -254,11 +255,11 @@ body, html {
     .caption div.border {
         font-size: 16px;
     }
-    .capital{
-        font-size: 24px;
-    }
     .capital_dark {
         font-size: 45px;
+    }
+    .capital_dark{
+        font-size: 36px;
     }
     .nav-link {
         font-size: 1.3em;
@@ -277,6 +278,9 @@ body, html {
     .capital{
         font-size: 45px;
     }
+    .capital_dark{
+        font-size: 36px;
+    }
     .nav-link {
         font-size: 1.5em;
     }
@@ -293,6 +297,9 @@ body, html {
     }
     .capital{
         font-size: 48px;
+    }
+    .capital_dark{
+        font-size: 36px;
     }
     .nav-link {
         font-size: 1.8em;
@@ -313,6 +320,7 @@ body, html {
 }
 .event_img{
     max-width: 100%;
+    max-height: 200px;
 }
 
 .country_flag {
@@ -510,6 +518,7 @@ body, html {
         width: 100%;
         height: 120px;
     }
+
 }
 @media all and (min-width: 768px) {
     .modal-dialog {

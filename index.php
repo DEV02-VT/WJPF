@@ -10,7 +10,8 @@ include_once("includes/nav_base.php");
 	<div class="caption_intro">
 		<div class="row justify-content-center">
 			<div class="col-11  col-md-9 col-lg-7 border text-center">
-                        <img src="img/logo_wjpf.png" width="100%" class="d-inline-block align-top" alt="">
+                <h2>International Jigsaw Puzzle Association (WJPF)</h2>
+<!--   <img src="img/logo_wjpf.png" width="100%" class="d-inline-block align-top" alt=""> -->
             </div>
         </div>
     </div>
@@ -18,7 +19,7 @@ include_once("includes/nav_base.php");
 
    <div class="text-block">
      <h3 style="text-align:center;">What is WJPF</h3>
-     <p>The World Jigsaw Puzzle Federation was founded in 2025 from puzzle enthusiasts from all over the world. A Federation to coordinate competitive puzzling and to connect, represent, and unite all the different associations.
+     <p>The International Jigsaw Puzzle Association was founded in 2026 from puzzle enthusiasts from all over the world. A Association to coordinate competitive puzzling and to connect, represent, and unite all the different associations.
    The committee recognizes maximum 1 not-for-profit Jigsaw Puzzle Association (JPA) per country. Member JPAs share and follow the objectives that are laid out by the WJPF. Members can use the network of the WJPF for best practices and to learn from other associations.</p><p>
            These are the key responsibilities of the WJPF:<br><br>
            - Coordinate the World Jigsaw Puzzle Championship (WJPC)<br>
@@ -285,39 +286,144 @@ include_once("includes/nav_base.php");
         </div>
     </div>
 </div>
-
+-->
 <div class="bgimg_6 parallax">
-    <div class="caption" id="events">
+    <div class="caption" id="championships">
         <div class="row justify-content-center">
-            <div class="col-11 col-sm-9  col-md-7 col-lg-6 border text-start">
-                <span class="capital">Events</span>
+            <div class="col-11 col-md-9 col-lg-8 border text-center">
+                <span class="capital">World championships</span>
             </div>
         </div>
     </div>
 </div>
 <div class="text-block" >
     <div class="row justify-content-center text-center mt-3 mb-3">
-        <a href="https://puzzledernegi.com/" target="_blank">
+        <a href="https://worldjigsawpuzzle.org/" target="_blank">
+            <div class="user-tile user_tile_frame">
+                <div class="row user_frame">
+                    <div class="col-12 col-md-2 user_frame_image d-flex  align-items-center justify-content-center">
+                        <img class="event_img" src="img/championship/logo_wjpf.png">
+                    </div>
+                    <div class="col-12 col-md-10 user_frame_name d-flex justify-content-center">
+                        <div class="row">
+                            <div class="col-12 d-flex justify-content-center">
+                                <span class="capital capital_dark">World Jigsaw Puzzle Championships 2026</span>
+                            </div>
+                            <div class="col-12 d-flex justify-content-center">
+                                <span class="dark_date">16–20/09/2026 – Valladolid, Spain</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+<div class="row justify-content-center text-center mt-3 mb-3">
+    <a href="https://worldjigsawpuzzle.org/wjpc/2025" target="_blank">
         <div class="user-tile user_tile_frame">
             <div class="row user_frame">
-                <div class="col-12 col-md-4 user_frame_image d-flex  align-items-center justify-content-center">
-                    <img class="event_img" src="img/event/puzzle_dernegi.png">
+                <div class="col-12 col-md-2 user_frame_image d-flex  align-items-center justify-content-center">
+                    <img class="event_img" src="img/championship/logo_wjpf.png">
                 </div>
-            <div class="col-12 col-md-8 user_frame_name d-flex justify-content-center">
-                <div class="row">
-                    <div class="col-12 d-flex justify-content-center">
-                        <span class="capital capital_dark">European Jigsaw Puzzle Championships 2026</span>
-                    </div>
-                    <div class="col-12 d-flex justify-content-center">
-                        <span class="dark_date">27–29.11.2026 – İstanbul, Türkiye</span>
+                <div class="col-12 col-md-10 user_frame_name d-flex justify-content-center">
+                    <div class="row">
+                        <div class="col-12 d-flex justify-content-center">
+                            <span class="capital capital_dark">World Jigsaw Puzzle Championships 2025</span>
+                        </div>
+                        <div class="col-12 d-flex justify-content-center">
+                            <span class="dark_date">15–21/09/2025 – Valladolid, Spain</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        </a>
+    </a>
+</div>
+<div class="row justify-content-center text-center mt-3 mb-3">
+    <a href="https://worldjigsawpuzzle.org/wjpc/2024" target="_blank">
+        <div class="user-tile user_tile_frame">
+            <div class="row user_frame">
+                <div class="col-12 col-md-2 user_frame_image d-flex  align-items-center justify-content-center">
+                    <img class="event_img" src="img/championship/logo_wjpf.png">
+                </div>
+                <div class="col-12 col-md-10 user_frame_name d-flex justify-content-center">
+                    <div class="row">
+                        <div class="col-12 d-flex justify-content-center">
+                            <span class="capital capital_dark">World Jigsaw Puzzle Championships 2024</span>
+                        </div>
+                        <div class="col-12 d-flex justify-content-center">
+                            <span class="dark_date">18–22/09/2024 – Valladolid, Spain</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-</div>-->
+    </a>
+</div>
+<div class="row justify-content-center text-center mt-3 mb-3">
+    <a href="https://worldjigsawpuzzle.org/wjpc/2023" target="_blank">
+        <div class="user-tile user_tile_frame">
+            <div class="row user_frame">
+                <div class="col-12 col-md-2 user_frame_image d-flex  align-items-center justify-content-center">
+                    <img class="event_img" src="img/championship/logo_wjpf.png">
+                </div>
+                <div class="col-12 col-md-10 user_frame_name d-flex justify-content-center">
+                    <div class="row">
+                        <div class="col-12 d-flex justify-content-center">
+                            <span class="capital capital_dark">World Jigsaw Puzzle Championships 2023</span>
+                        </div>
+                        <div class="col-12 d-flex justify-content-center">
+                            <span class="dark_date">21–24/09/2023 – Valladolid, Spain</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </a>
+</div>
+<div class="row justify-content-center text-center mt-3 mb-3">
+    <a href="https://worldjigsawpuzzle.org/wjpc/2022" target="_blank">
+        <div class="user-tile user_tile_frame">
+            <div class="row user_frame">
+                <div class="col-12 col-md-2 user_frame_image d-flex  align-items-center justify-content-center">
+                    <img class="event_img" src="img/championship/logo_wjpf.png">
+                </div>
+                <div class="col-12 col-md-10 user_frame_name d-flex justify-content-center">
+                    <div class="row">
+                        <div class="col-12 d-flex justify-content-center">
+                            <span class="capital capital_dark">World Jigsaw Puzzle Championships 2022</span>
+                        </div>
+                        <div class="col-12 d-flex justify-content-center">
+                            <span class="dark_date">24–26/06/2022 – Valladolid, Spain</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </a>
+</div>
+<div class="row justify-content-center text-center mt-3 mb-3">
+    <a href="https://worldjigsawpuzzle.org/wjpc/2019" target="_blank">
+        <div class="user-tile user_tile_frame">
+            <div class="row user_frame">
+                <div class="col-12 col-md-2 user_frame_image d-flex  align-items-center justify-content-center">
+                    <img class="event_img" src="img/championship/logo_wjpf.png">
+                </div>
+                <div class="col-12 col-md-10 user_frame_name d-flex justify-content-center">
+                    <div class="row">
+                        <div class="col-12 d-flex justify-content-center">
+                            <span class="capital capital_dark">World Jigsaw Puzzle Championships 2019</span>
+                        </div>
+                        <div class="col-12 d-flex justify-content-center">
+                            <span class="dark_date">23–24/09/2019 – Valladolid, Spain</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </a>
+</div>
+</div>
 
 <div class="bgimg_4 parallax" id="contact">
 <div class="caption">

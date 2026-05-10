@@ -7,7 +7,7 @@
 	<meta charset="UTF-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>World Jigsaw Puzzle Federation</title>
+    <title>International Jigsaw Puzzle Association (WJPF)</title>
 	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="img/wjpf.ico" />
 	<link rel="stylesheet" href="css/bootstrap/5.3.1/bootstrap.css">
 	<link rel="stylesheet" href="css/datatables/1.13.6/datatables.min.css">
