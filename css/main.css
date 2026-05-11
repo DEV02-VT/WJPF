@@ -4,9 +4,10 @@
     --grundfarbe-hellblau: #8ebbe5;
     --grundfarbe-dunkelblau: #02335E;
     --grundfarbe-gruen: #a1bf38;
+    --grundfarbe-dunkelblau_shadow: #01224D;
 
     --bs-border-color: #a1bf38;
-    --bs-border-width: 6px;
+    --bs-border-width: 3px;
 
 --text-color: #2B2B2B;
 --grundfarbe-mittel: #8D8D8D;
@@ -612,6 +613,12 @@ opacity: 0.36;
     top: 40%;
     width: 100%;
 }
+
+.btn-dark {
+    background-color:  var(--grundfarbe-dunkelblau);
+    border-color: var(--grundfarbe-dunkelblau_shadow);
+}
+
 
 
 

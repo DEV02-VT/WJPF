@@ -37,6 +37,10 @@ $lang = get_language();
 </div>
 
  <div class="full_container">
+     <button type="button" name="newAssociation" id="newAssociation" class="btn btn-dark mt-3 mb-3">Create new association</button>
+     <button type="button" name="showMemberMaillist" id="showMemberMaillist" class="btn btn-dark mt-3 mb-3">Show member mail list</button>
+     <button type="button" name="showNonMemberMaillist" id="showNonMemberMaillist" class="btn btn-dark mt-3 mb-3">Show non member mail list</button>
+     <button type="button" name="showAllAssociationslist" id="showAllAssociationslist" class="btn btn-dark mt-3 mb-3">Show all associations mail list</button>
     <table id="association_table" class="table desktop_table">
     <thead>
         <th></th>
@@ -50,10 +54,6 @@ $lang = get_language();
         <th></th>
     </thead>
     </table>
-	<button type="button" name="newAssociation" id="newAssociation" class="btn btn-dark mt-3 mb-3">Create new association</button>
-     <button type="button" name="showMemberMaillist" id="showMemberMaillist" class="btn btn-dark mt-3 mb-3">Show member mail list</button>
-     <button type="button" name="showNonMemberMaillist" id="showNonMemberMaillist" class="btn btn-dark mt-3 mb-3">Show non member mail list</button>
-     <button type="button" name="showAllAssociationslist" id="showAllAssociationslist" class="btn btn-dark mt-3 mb-3">Show all associations mail list</button>
 </div>
 
 <div class="modal fade" id="editAssociationModal" role="dialog" aria-labelledby="editAssociationModal" aria-hidden="true">

@@ -46,6 +46,7 @@ $lang = get_language();
 </div>
 
  <div class="full_container">
+     <button type="button" name="newUser" id="newUser" class="btn btn-dark mb-3">Create new user</button>
     <table id="user_table" class="table desktop_table">
     <thead>
         <th></th>
@@ -58,7 +59,6 @@ $lang = get_language();
         <th></th>
     </thead>
     </table>
-	<button type="button" name="newUser" id="newUser" class="btn btn-dark mb-3">Create new user</button>
 </div>
 
 <div class="modal fade" id="editUserModal" role="dialog" aria-labelledby="editUserModal" aria-hidden="true">
