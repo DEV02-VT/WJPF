@@ -42,7 +42,7 @@ include_once("includes/nav_base.php");
 <div class="bgimg_3 parallax">
 	<div class="caption">
 		<div class="row justify-content-center">
-			<div class="col-11 col-sm-9  col-md-7 col-lg-5 border text-start">
+			<div class="col-11 col-sm-9  col-md-7 col-lg-5 border text-center">
 				<span class="capital">Members</span>
 			</div>
 		</div>
@@ -241,7 +241,7 @@ include_once("includes/nav_base.php");
 <div class="bgimg_2 parallax">
     <div class="caption">
         <div class="row justify-content-center">
-            <div class="col-11 col-sm-9  col-md-7 col-lg-5 border text-start">
+            <div class="col-11 col-sm-9  col-md-7 col-lg-5 border text-center">
                 <span class="capital">Board</span>
             </div>
         </div>
@@ -266,7 +266,7 @@ include_once("includes/nav_base.php");
 <div class="bgimg_5 parallax">
     <div class="caption" id="publications">
         <div class="row justify-content-center">
-            <div class="col-11 col-sm-9  col-md-7 col-lg-6 border text-start">
+            <div class="col-11 col-sm-9  col-md-7 col-lg-6 border text-center">
                 <span class="capital">Publications</span>
             </div>
         </div>
@@ -428,7 +428,7 @@ include_once("includes/nav_base.php");
 <div class="bgimg_4 parallax" id="contact">
 <div class="caption">
 	<div class="row justify-content-center">
-	<div class="col-11   col-md-8 col-lg-7 border text-start">
+	<div class="col-11   col-md-8 col-lg-7 border text-center">
 		<table>
 		<tr><td><span class="capital">Contact us</span></td><td><a href="mailto:board@wjpf.org"><img src="img/mail_blue.png" class="social_img"></img></a></td></tr>
 <!--		<tr><td><span class="capital">Follow us</span></td><td><a href="https://www.instagram.com/ecjp_ejpc/" target="_blank"><img src="img/instagram_blue.png" class="social_img"></img></a></td></tr> -->
