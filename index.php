@@ -21,12 +21,20 @@ include_once("includes/nav_base.php");
      <h3 style="text-align:center;">What is WJPF</h3>
      <p>The International Jigsaw Puzzle Association was founded in 2026 from puzzle enthusiasts from all over the world. A Association to coordinate competitive puzzling and to connect, represent, and unite all the different associations.
    The committee recognizes maximum 1 not-for-profit Jigsaw Puzzle Association (JPA) per country. Member JPAs share and follow the objectives that are laid out by the WJPF. Members can use the network of the WJPF for best practices and to learn from other associations.</p><p>
-           These are the key responsibilities of the WJPF:<br><br>
-           - Coordinate the World Jigsaw Puzzle Championship (WJPC)<br>
-           - Appoint the yearly rotating host country<br>
-           - Unify the format and ruleset of the WJPC<br>
-           - Oversee the finances of the WJPC<br>
-           - Assist in establishing new Jigsaw Puzzle Associations
+
+           The Federation's main objectives will be:<br>
+           <div class="text-start">
+               a) Sharing knowledge and best practice about speedpuzzling<br>
+               b) Developing, maintaining, and updating rules and standards for
+               international speed puzzling competitions.<br>
+               c) Supporting and overseeing the flagship World Jigsaw Puzzle Competition
+               and ensuring it meets standards of fairness, accessibility, and quality<br>
+               d) Encouraging collaboration and exchange among member associations.<br>
+               e) Coordinating and endorsing the International Competition Calendar.<br>
+               f) Guaranteeing common standards of ethics, inclusion, accessibility, and
+               diversity.<br>
+               g) Promoting training programs for judges, organizers, and competitors.
+           </div>
        </p>
    </div>
 
