@@ -107,8 +107,8 @@ $lang = get_language();
                                 </div>
                             </div>
 						<div class="col-12 col-lg-4 mb-3" id="association_email_frame">
-							<label for="association_email">Email*</label>
-							<input type="email" name="association_email" id="association_email" class="form-control" maxlength="70" required>
+							<label for="association_email">Email</label>
+							<input type="email" name="association_email" id="association_email" class="form-control" maxlength="70">
 						</div>
                         <div class="col-12 col-lg-4 mb-3" id="association_phone_frame">
                             <label for="association_phone">Phone</label>
