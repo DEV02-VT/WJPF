@@ -153,10 +153,6 @@ function get_association_input_data(&$association) : string
         return 'Invalid parameter: nationality_code';
     }
     $association['email']  = decode(filter_input(INPUT_POST, "email"));
-    if ($association['email'] == '')
-    {
-        return 'Invalid parameter: email';
-    }
     $association['id']  = decode(filter_input(INPUT_POST, "id"));
     $association['registration_number']  = decode(filter_input(INPUT_POST, "registration_number"));
     $association['foundation_date']  = decode(filter_input(INPUT_POST, "foundation_date"));
