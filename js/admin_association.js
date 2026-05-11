@@ -333,6 +333,72 @@ $(document).ready(function() {
 		$('#association_picture').val('');
 		document.getElementById('preview').src = 'img/boss.png';
 	});
+
+	$(document).on("click", "#showMemberMaillist", function() {
+		$('#maillistMemberModal').modal('show');
+	});
+
+	//to prevent from closing when clicking outside the modal
+	$('#maillistMemberModal').modal({
+		backdrop: 'static',
+		keyboard: true
+	});
+
+	$(document).on("click", "#copyMemberMaillist", function() {
+		var copyText = document.getElementById("member-maillist");
+
+		/* Select the text field */
+		copyText.select();
+		copyText.setSelectionRange(0, 99999); /* Für Mobile Devices */
+
+		/* Kopiere den Text us dem Textfeld */
+		document.execCommand("copy");
+	});
+
+	$(document).on("click", "#showNonMemberMaillist", function() {
+		$('#maillistNonMemberModal').modal('show');
+	});
+
+	//to prevent from closing when clicking outside the modal
+	$('#maillistNonMemberModal').modal({
+		backdrop: 'static',
+		keyboard: true
+	});
+
+	$(document).on("click", "#copyNonMemberMaillist", function() {
+		var copyText = document.getElementById("non-member-maillist");
+
+		/* Select the text field */
+		copyText.select();
+		copyText.setSelectionRange(0, 99999); /* Für Mobile Devices */
+
+		/* Kopiere den Text us dem Textfeld */
+		document.execCommand("copy");
+	});
+
+	$(document).on("click", "#showAllAssociationslist", function() {
+		$('#maillistAllAssociationsModal').modal('show');
+	});
+
+	//to prevent from closing when clicking outside the modal
+	$('#maillistAllAssociationsModal').modal({
+		backdrop: 'static',
+		keyboard: true
+	});
+
+	$(document).on("click", "#copyAllAssociationsMaillist", function() {
+		var copyText = document.getElementById("all-associations-maillist");
+
+		/* Select the text field */
+		copyText.select();
+		copyText.setSelectionRange(0, 99999); /* Für Mobile Devices */
+
+		/* Kopiere den Text us dem Textfeld */
+		document.execCommand("copy");
+	});
+
+
+
 });
 
 

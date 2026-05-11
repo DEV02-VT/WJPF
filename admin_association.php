@@ -50,7 +50,10 @@ $lang = get_language();
         <th></th>
     </thead>
     </table>
-	<button type="button" name="newAssociation" id="newAssociation" class="btn btn-dark mb-3">Create new association</button>
+	<button type="button" name="newAssociation" id="newAssociation" class="btn btn-dark mt-3 mb-3">Create new association</button>
+     <button type="button" name="showMemberMaillist" id="showMemberMaillist" class="btn btn-dark mt-3 mb-3">Show member mail list</button>
+     <button type="button" name="showNonMemberMaillist" id="showNonMemberMaillist" class="btn btn-dark mt-3 mb-3">Show non member mail list</button>
+     <button type="button" name="showAllAssociationslist" id="showAllAssociationslist" class="btn btn-dark mt-3 mb-3">Show all associations mail list</button>
 </div>
 
 <div class="modal fade" id="editAssociationModal" role="dialog" aria-labelledby="editAssociationModal" aria-hidden="true">
@@ -73,7 +76,7 @@ $lang = get_language();
 						<div class="col-12 block-titel">Personal Data</div>
                             <div class="col-6">
                                 <div class="row justify-content-left">
-                                    <div class="col-12 col-md-6 col-lg-6 mb-2" id="association_type">
+                                    <div class="col-12 col-md-6 col-lg-6 mb-2" id="association_type_frame">
                                         <label for="association_type">Type *</label>
                                         <?php create_association_type_select('association_type', 'form-select', 1, true); ?>
                                     </div>
@@ -211,6 +214,84 @@ $lang = get_language();
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
         </div>
       </div>
+    </div>
+</div>
+
+<div class="modal fade" id="maillistMemberModal" role="dialog" aria-labelledby="maillistMemberModal" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Member Association E-Mails</h5>
+                <button type="button" class="close btn btn-secondary" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <div id="maillistMemberMsg"></div>
+                </div>
+                <div >
+                    <textarea class="form-control" name="member-maillist" id="member-maillist" rows="15" readonly ><?php echo get_member_associations_emails();?></textarea>
+                </div><br>
+            </div>
+            <div class="modal-footer">
+                <a href="mailto:board@wjpf.org?bcc=<?php echo get_member_associations_emails();?>"><button type="button" form="modal-details" class="btn btn-dark">Open Bcc Email</button></a>
+                <button type="button" name="copyMemberMaillist" id="copyMemberMaillist" form="modal-details" class="btn btn-dark">Copy to clipboard</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="maillistNonMemberModal" role="dialog" aria-labelledby="maillistNonMemberModal" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Non member Association E-Mails</h5>
+                <button type="button" class="close btn btn-secondary" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <div id="nonMaillistMemberMsg"></div>
+                </div>
+                <div >
+                    <textarea class="form-control" name="non-member-maillist" id="non-member-maillist" rows="15" readonly ><?php echo get_non_member_associations_emails();?></textarea>
+                </div><br>
+            </div>
+            <div class="modal-footer">
+                <a href="mailto:board@wjpf.org?bcc=<?php echo get_non_member_associations_emails();?>"><button type="button" form="modal-details" class="btn btn-dark">Open Bcc Email</button></a>
+                <button type="button" name="copyNonMemberMaillist" id="copyNonMemberMaillist" form="modal-details" class="btn btn-dark">Copy to clipboard</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="maillistAllAssociationsModal" role="dialog" aria-labelledby="maillistAllAssociationsModal" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">All Association E-Mails</h5>
+                <button type="button" class="close btn btn-secondary" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <div id="allAssociationsMsg"></div>
+                </div>
+                <div >
+                    <textarea class="form-control" name="all-associations-maillist" id="all-associations-maillist" rows="15" readonly ><?php echo get_all_associations_emails();?></textarea>
+                </div><br>
+            </div>
+            <div class="modal-footer">
+                <a href="mailto:board@wjpf.org?bcc=<?php echo get_all_associations_emails();?>"><button type="button" form="modal-details" class="btn btn-dark">Open Bcc Email</button></a>
+                <button type="button" name="copyAllAssociationsMaillist" id="copyAllAssociationsMaillist" form="modal-details" class="btn btn-dark">Copy to clipboard</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+            </div>
+        </div>
     </div>
 </div>
 

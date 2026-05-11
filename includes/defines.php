@@ -41,8 +41,8 @@ const GLB_ASSOCIATION_TYPE_CONTINENTAL_FEDERATION 	= 3;
 const GLB_ASSOCIATION_TYPE_CONMPANY              	= 4;
 $glb_association_type[GLB_ASSOCIATION_TYPE_NATIONAL_ASSOCIATION] = 'National association';
 $glb_association_type[GLB_ASSOCIATION_TYPE_WORLD_FEDERATION] = 'World federation';
-$glb_association_type[GLB_USER_STATUS_ACTIVE] = 'Continental federation';
-$glb_association_type[GLB_USER_STATUS_INACTIVE] = 'Company';
+$glb_association_type[GLB_ASSOCIATION_TYPE_CONTINENTAL_FEDERATION] = 'Continental federation';
+$glb_association_type[GLB_ASSOCIATION_TYPE_CONMPANY] = 'Company';
 
 /*** ASSOCIATION FILTER ***/
 const GLB_ASSOCIATION_FILTER_MEMBERS     = 1;

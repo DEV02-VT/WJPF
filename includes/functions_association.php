@@ -67,6 +67,54 @@ function get_association_phone($id)
     return '';
 }
 
+function get_member_associations_emails()
+{
+    $sql = "SELECT email from association WHERE type = '" . GLB_ASSOCIATION_TYPE_NATIONAL_ASSOCIATION . "' AND member = 1 AND email != '' order by email";
+    $ret = query_array($sql);
+    $mails = [];
+    foreach ($ret as $member)
+    {
+        $email = trim($member['email']);
+        if ($email != '')
+        {
+            $mails[] = $email;
+        }
+    }
+    return implode(';', $mails);
+}
+
+function get_non_member_associations_emails()
+{
+    $sql = "SELECT email from association WHERE  type = '" . GLB_ASSOCIATION_TYPE_NATIONAL_ASSOCIATION . "' AND member = 0 AND email != '' order by email";
+    $ret = query_array($sql);
+    $mails = [];
+    foreach ($ret as $member)
+    {
+        $email = trim($member['email']);
+        if ($email != '')
+        {
+            $mails[] = $email;
+        }
+    }
+    return implode(';', $mails);
+}
+
+function get_all_associations_emails()
+{
+    $sql = "SELECT email from association WHERE  type = '" . GLB_ASSOCIATION_TYPE_NATIONAL_ASSOCIATION . "' AND email != '' order by email";
+    $ret = query_array($sql);
+    $mails = [];
+    foreach ($ret as $member)
+    {
+        $email = trim($member['email']);
+        if ($email != '')
+        {
+            $mails[] = $email;
+        }
+    }
+    return implode(';', $mails);
+}
+
 function update_association($association)
 {
     $id = escape($association['id']);
