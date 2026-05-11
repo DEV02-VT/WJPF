@@ -23,17 +23,19 @@ include_once("includes/nav_base.php");
    The committee recognizes maximum 1 not-for-profit Jigsaw Puzzle Association (JPA) per country. Member JPAs share and follow the objectives that are laid out by the WJPF. Members can use the network of the WJPF for best practices and to learn from other associations.</p><p>
 
            The Federation's main objectives will be:<br>
-           <div class="text-start">
-               a) Sharing knowledge and best practice about speedpuzzling<br>
-               b) Developing, maintaining, and updating rules and standards for
-               international speed puzzling competitions.<br>
-               c) Supporting and overseeing the flagship World Jigsaw Puzzle Competition
-               and ensuring it meets standards of fairness, accessibility, and quality<br>
-               d) Encouraging collaboration and exchange among member associations.<br>
-               e) Coordinating and endorsing the International Competition Calendar.<br>
-               f) Guaranteeing common standards of ethics, inclusion, accessibility, and
-               diversity.<br>
-               g) Promoting training programs for judges, organizers, and competitors.
+           <div class="row justify-content-center">
+               <div class="col-12 col-md-8 col-lg-6 text-start">
+                   a) Sharing knowledge and best practice about speedpuzzling<br>
+                   b) Developing, maintaining, and updating rules and standards for
+                   international speed puzzling competitions.<br>
+                   c) Supporting and overseeing the flagship World Jigsaw Puzzle Competition
+                   and ensuring it meets standards of fairness, accessibility, and quality<br>
+                   d) Encouraging collaboration and exchange among member associations.<br>
+                   e) Coordinating and endorsing the International Competition Calendar.<br>
+                   f) Guaranteeing common standards of ethics, inclusion, accessibility, and
+                   diversity.<br>
+                   g) Promoting training programs for judges, organizers, and competitors.
+               </div>
            </div>
        </p>
    </div>
