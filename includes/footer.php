@@ -1,3 +1,14 @@
+
+<div class="bgimg_4 parallax">
+    <div class="caption" id="championships">
+        <div class="row justify-content-center">
+            <div class="col-11 col-md-9 col-lg-8 border text-center">
+                <span class="capital">Contact us</span><a href="mailto:board@wjpf.org"><img src="img/mail_blue.png" class="social_img"></img></a>
+            </div>
+        </div>
+    </div>
+</div>
+
 <!--<footer class="footer">
     <div class="py-md-3 px-3 px-md-3 text-body-secondary ">
         <div class="row justify-content-center text-center">
@@ -8,6 +19,8 @@
         </div>
     </div>
 </footer>-->
+
+
 
 <script src="js/jquery/3.7.1/jquery-3.7.1.js"></script>
 <script src="js/bootstrap/5.3.1/bootstrap.bundle.min.js"></script>

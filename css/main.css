@@ -85,7 +85,7 @@ body, html {
 
 .bgimg_4{
   background-image: url('../img/roll2.jpg');
-  min-height: 100%;
+  min-height: 800px;
 }
 
 .bgimg_5{
@@ -136,7 +136,7 @@ left: 0;
 width: 100%;
 text-align: center;
 color: #000;
-padding: 20px;
+padding: 2px;
 }
 
 
@@ -150,13 +150,12 @@ border-radius: 17px;
 }
 
 .capital{
-font-size: 60px;
+ font-size: 1.5rem;
  color: var(--grundfarbe-hellblau);
  font-weight: bold;
 }
 
 .capital_dark{
-font-size: 36px;
 color: var(--grundfarbe-gruen);
 }
 
@@ -180,7 +179,7 @@ font-weight: bold;
 }
 
 .bgimg_4{
-    min-height: 400px;
+    min-height: 150px;
 }
 
 .bgimg_5{
@@ -197,12 +196,6 @@ font-weight: bold;
 .caption div.border {
     font-size: 12px;
 }
-.capital{
-    font-size: 36px;
-}
-.capital_dark{
-    font-size: 136x;
-}
 
 .nav-link {
     font-size: 1em;
@@ -212,7 +205,11 @@ font-weight: bold;
 }
 }
 @media all and (min-width: 576px) {
-.bgimg_1{
+
+    .caption{
+        padding: 20px;
+    }
+    .bgimg_1{
     min-height: 100%;
 }
 
@@ -225,7 +222,7 @@ font-weight: bold;
 }
 
 .bgimg_4{
-    min-height: 100%;
+    min-height: 300px;
 }
 
 .bgimg_5{
@@ -242,12 +239,6 @@ font-weight: bold;
 .caption div.border {
     font-size: 16px;
 }
-.capital_dark {
-    font-size: 45px;
-}
-.capital_dark{
-    font-size: 36px;
-}
 .nav-link {
     font-size: 1.3em;
 }
@@ -261,12 +252,6 @@ font-weight: bold;
 }
 .caption div.border {
     font-size: 30px;
-}
-.capital{
-    font-size: 45px;
-}
-.capital_dark{
-    font-size: 36px;
 }
 .nav-link {
     font-size: 1.5em;
@@ -282,12 +267,6 @@ font-weight: bold;
 .caption div.border {
     font-size: 32px;
 }
-.capital{
-    font-size: 48px;
-}
-.capital_dark{
-    font-size: 36px;
-}
 .nav-link {
     font-size: 1.8em;
 }
@@ -300,7 +279,7 @@ font-weight: bold;
 
 .social_img{
 margin-left: 10px;
-width: 60px;
+width: 2em;
 }
 .association_img{
 height: 100px;
@@ -351,6 +330,23 @@ gap: 20px;
 overflow: hidden;
 justify-items: center;
 padding: 1em;
+}
+
+.championship_tile_frame {
+    padding: 0 1em;
+}
+
+.championship_frame {
+    padding: 1em;
+    margin-bottom: 20px;
+    border-radius: 17px;
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+//    min-height: 200px;
+}
+
+.championship_tile a {
+    color: var(--text-color);
+    text-decoration: none;
 }
 
 
