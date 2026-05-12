@@ -692,7 +692,7 @@ opacity: 0.36;
 
 .appointment .date{
     display: inline-block;
-    width : 9em;
+    width : 7em;
     padding-left: 4px;
 }
 .appointment .headline{
@@ -713,6 +713,13 @@ opacity: 0.36;
         gap: 2px;
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         align-items: start;*/
+}
+.appointment .country_button{
+    margin-right: 5px;
+    margin-top: 2px;
+    box-shadow: 10px 10px 10px grey;
+    width: 3em;
+    height: auto;
 }
 
 

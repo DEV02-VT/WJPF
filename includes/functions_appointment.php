@@ -127,16 +127,15 @@ function display_future_appointments()
         if (isset($appointment['headline']))
         {
             $ret .=	'<div class="appointment">';
-            if (isset($appointment['status']))
-                $ret .= '<a href="' . $appointment['link'] . '"><div class="appointment-inner meeting"><img src="img/meeting.png">';
-            else
-                $ret .= '<a href="' . $appointment['link'] . '" target="_blank"><div class="appointment-inner trophy"><img src="img/trophy.png">';
+            $ret .= '<a href="' . $appointment['link'] . '" target="_blank"><div class="appointment-inner trophy"><img src="img/trophy.png">';
             $ret .= '<div class="date">' . date('d.m.Y', $begin);
             if ($appointment['end'] && $appointment['end'] > $appointment['begin'])
             {
                 $ret .= ' -<br>' . date('d.m.Y', strtotime($appointment['end']));
             }
             $ret .=	'</div>';
+            if (isset($appointment['country_code']) && $appointment['country_code'] != '')
+                $ret .=	show_country_icon($appointment['country_code'], 'en', $class = '', $style = '');
             $ret .= '<span class= "headline secondary">' . $appointment['headline'] . '</span>';
             $ret .= '<br>' . $appointment['place'];
             $ret .= '</div></a>';
@@ -146,10 +145,7 @@ function display_future_appointments()
         {
             $ret .=	'<div class="appointment">';
 
-            if ($appointment['type'] == GLB_EVENT_TYPE_EXTERNAL)
-                $ret .= '<a href="' . $appointment['external_link'] . '" target="_blank"><div class="appointment-inner trophy"><img src="img/trophy.png">';
-            else
-                $ret .= '<a href="' . $url . '?id=' . $appointment['id'] . '" target="_blank"><div class="appointment-inner trophy"><img src="img/trophy.png">';
+            $ret .= '<a href="' . $url . '?id=' . $appointment['id'] . '" target="_blank"><div class="appointment-inner trophy"><img src="img/trophy.png">';
             $ret .= '<div class="date">' . date('d.m.Y', $begin);
             if ($appointment['end'] && $appointment['end'] > $appointment['begin'])
             {
@@ -158,14 +154,7 @@ function display_future_appointments()
             $ret .=	'</div>';
             $ret .= '<span class= "headline secondary">' . translate_by_id($appointment['title_txt']) . '</span>';
             $ret .= '<br>';
-            if ($appointment['loc_type'] == GLB_EVENT_LOCATION_TYPE_ONSITE)
-            {
-                $ret .=	$appointment['loc_town'];
-            }
-            else
-            {
-                $ret .=	translate_by_shortcut('ONLINE');
-            }
+            $ret .=	$appointment['loc_town'];
             $ret .= '</div></a>';
             $ret .=	'</div>';
         }
