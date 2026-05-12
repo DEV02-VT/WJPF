@@ -93,3 +93,25 @@ CREATE TABLE association_admin
     constraint `fk_association_admin_association` foreign key (association_id) references association (id) on delete cascade,
     constraint `fk_association_admin_user` foreign key (user_id) references user (id) on delete cascade
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE appointment
+(
+    id        	int NOT NULL auto_increment,
+    headline  	varchar(255),
+    link      	TEXT,
+    place  		varchar(255),
+    begin		DATE,
+    end			DATE,
+    author_id   int,
+    type	    int DEFAULT 1,
+    street 	    varchar(100) NOT NULL,
+    house_number    varchar(20) NOT NULL,
+    zip			varchar(10) NOT NULL,
+    town		varchar(100) NOT NULL,
+    country_code    varchar(2)  NOT NULL,
+    latitude 	varchar(30),
+    longitude 	varchar(30),
+
+    PRIMARY KEY (id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;

@@ -615,6 +615,106 @@ opacity: 0.36;
     border-color: var(--grundfarbe-dunkelblau_shadow);
 }
 
+.marker_meeting {
+    /*	background-image: url(../img/meeting_marker.png);
+        background-size: contain;*/
+    cursor: pointer;
+}
+
+.marker_img{
+    height: 47px;
+    width: 47px;
+}
+
+.marker_event {
+    height: 69px;
+    width: 47px;
+    background-image: url(../img/puzzle.png);
+    background-size: contain;
+    cursor: pointer;
+}
+
+.event_map{
+    width: 100%;
+    height: 600px;
+}
+.tab_img{
+    height: 30px;
+    width: 30px;
+}
+
+.appointment {
+    cursor : pointer;
+    margin: 0px 20px 20px 0px;
+    padding: 1em;
+    border-radius: 17px;
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+}
+
+.appointment-title {
+    font-family: var(--primary-font-family);
+    color: var(--primary-color);
+    font-style: normal;
+    font-size: 36px;
+    line-height: 24px;
+    letter-spacing: 2px;
+    writing-mode: sideways-lr;
+}
+
+.appointment-inner{
+    border: 1px solid var(--primary-color);
+    width: 15em;
+    border-radius: 8px;
+    padding: 5px;
+    height: 12em;
+}
+/*.appointment-inner.trophy{
+    background-color: rgba(217, 55, 6, .2);
+}
+.appointment-inner.meeting{
+    background-color: rgba(6, 224, 107, .2);
+}*/
+.appointment-inner:hover {
+    border: 3px solid var(--primary-color);
+}
+.appointment a{
+    font-size: 12px;
+    line-height: 14px;
+    cursor: pointer;
+    color: var(--text-color);
+    text-decoration-line: none;
+}
+.appointment img{
+    display: inline-block;
+    width : 3em;
+    height : 3em;
+}
+
+.appointment .date{
+    display: inline-block;
+    width : 9em;
+    padding-left: 4px;
+}
+.appointment .headline{
+    display: block;
+    width : 100%;
+    margin-top: 2px;
+    font-size: 18px;
+    line-height: 18px;
+    font-weight: bold;
+    color:  var(--primary-color);
+}
+
+.appointment_line_container{
+    width: 100%;
+    padding: 0px 0px 0px 20px;
+    flex-wrap: wrap;
+    /*	display : grid;
+        gap: 2px;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        align-items: start;*/
+}
+
 
 
 

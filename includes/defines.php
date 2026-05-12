@@ -52,3 +52,9 @@ $glb_association_filter[GLB_ASSOCIATION_FILTER_MEMBERS] = 'Members only';
 $glb_association_filter[GLB_ASSOCIATION_FILTER_NON_MEMBERS] = 'Non members only';
 
 
+/*** APPOINTMENT TYPE ***/
+const GLB_APPOINTMENT_TYPE_COMPETITION	 			= 1;
+
+$glb_appointment_types[GLB_APPOINTMENT_TYPE_COMPETITION] = 'Competition';
+
+

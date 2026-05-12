@@ -13,6 +13,7 @@
 	<link rel="stylesheet" href="css/datatables/1.13.6/datatables.min.css">
 	<link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/my_datatable.css">
+    <link rel="stylesheet" href="css/maplibre/maplibre-gl.css">
 </head>
 
 <body class="d-flex flex-column h-100">

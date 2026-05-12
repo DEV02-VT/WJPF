@@ -15,6 +15,7 @@
                        data-bs-toggle="dropdown" aria-expanded="false">Championships</a>
                     <ul class="dropdown-menu" aria-labelledby="navbarAdminDropdown">
                         <li><a class="dropdown-item" href="world_championships.php">World Championships</a></li>
+                        <li><a class="dropdown-item" href="calendar.php">Calendar</a></li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
@@ -32,7 +33,9 @@
                             <?php if (user_is_admin() || user_is_board_user()){ ?>
                                 <li><a class="dropdown-item" href="admin_association.php">Associations</a></li>
                                 <li><a class="dropdown-item" href="admin_user.php">User</a></li>
+                                <hr>
                             <?php } ?>
+                            <li><a class="dropdown-item" href="admin_appointment.php">Appointments</a></li>
                         </ul>
                     </li>
                 <?php } ?>
