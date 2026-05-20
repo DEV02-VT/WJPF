@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Get-ChildItem -Path \"C:\\\\xampp\\\\htdocs\\\\wjpf\\\\database\" | ForEach-Object { $_.Name })",
+      "PowerShell(Get-ChildItem -Path \"C:\\\\xampp\\\\htdocs\\\\wjpf\\\\data\" | ForEach-Object { $_.Name })",
+      "PowerShell(\\(Get-Content -Path \"C:\\\\xampp\\\\htdocs\\\\wjpf\\\\CLAUDE.md\" | Measure-Object -Line\\).Lines)",
+      "PowerShell(& \"C:\\\\xampp\\\\mysql\\\\bin\\\\mysql.exe\" -u root wjpf -e $sql 2>&1)",
+      "PowerShell($sql = \"UPDATE news SET content = REPLACE\\(REPLACE\\(REPLACE\\(REPLACE\\(content, '&lt;', '<'\\), '&gt;', '>'\\), '&amp;', '&'\\), '&quot;', '`'\\) WHERE content LIKE '%&lt;%'\")",
+      "PowerShell(if \\($?\\) { \"OK\" })"
+    ]
+  }
+}

@@ -1439,6 +1439,21 @@ function create_event_volunteer_appointment_type_select( $id, $class, $selected,
     echo '</select>';
 }
 
+function create_news_status_select($id, $class, $selected, $required)
+{
+    global $glb_news_status;
+    if ($required) {
+        $required = 'required';
+    } else {
+        $required = '';
+    }
+    echo '<select id="' . $id . '" name="' . $id . '" class="' . $class . '" ' . $required . '>';
+    foreach ($glb_news_status as $key => $value) {
+        echo '<option value="' . $key . '"' . (($selected == $key) ? ' selected="selected"' : '') . '>' . $value . '</option>';
+    }
+    echo '</select>';
+}
+
 function create_appointment_type_select( $id, $class, $selected, $required)
 {
     global $glb_appointment_types;

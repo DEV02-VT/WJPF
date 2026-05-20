@@ -52,6 +52,13 @@ $glb_association_filter[GLB_ASSOCIATION_FILTER_MEMBERS] = 'Members only';
 $glb_association_filter[GLB_ASSOCIATION_FILTER_NON_MEMBERS] = 'Non members only';
 
 
+/*** NEWS STATUS ***/
+const GLB_NEWS_STATUS_DRAFT     = 1;
+const GLB_NEWS_STATUS_PUBLISHED = 2;
+$glb_news_status[GLB_NEWS_STATUS_DRAFT]     = 'Draft';
+$glb_news_status[GLB_NEWS_STATUS_PUBLISHED] = 'Published';
+
+
 /*** APPOINTMENT TYPE ***/
 const GLB_APPOINTMENT_TYPE_COMPETITION	 			= 1;
 
