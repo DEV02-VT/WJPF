@@ -214,8 +214,8 @@ function   display_federation_associations()
     {
 //            print_r($board_association);
         echo '<div class="user-tile user-tile_frame">';
+        echo '<a href="' . $member_association['website'] . '" target="_blank">';
         echo '<div class="row user_frame">';
-        echo '<a href="' . $member_association['website'] . '" target="_blank" class="d-block text-decoration-none">';
         echo '<div class="col-12 user_frame_image d-flex  align-items-center justify-content-center">';
         if ($member_association['image'] != '')
             echo '<img class="association_img" src="' . $member_association['image'] . '">';
@@ -226,12 +226,12 @@ function   display_federation_associations()
         echo '<div class="col-12 user_frame_name d-flex justify-content-center">';
         echo '<img class="country_flag" src="img/flags/' . $member_association['nationality_code'] . '.png"> <b>' . get_country_name($member_association['nationality_code'], 'en') . '</b>';
         echo '</div>';
+        echo '</div>';
         echo '</a>';
         $links_html = get_association_links_html($member_association['id']);
         if ($links_html != '') {
-            echo '<div class="col-12 d-flex justify-content-center gap-2 mt-2">' . $links_html . '</div>';
+            echo '<div class="d-flex justify-content-center gap-2 mt-1 mb-1">' . $links_html . '</div>';
         }
-        echo '</div>';
         echo '</div>';
     }
 }
