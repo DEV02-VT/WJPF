@@ -129,3 +129,13 @@ CREATE TABLE news (
                       updated_at  DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
                       PRIMARY KEY (id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE association_link (
+  id              int NOT NULL auto_increment,
+  association_id  int NOT NULL,
+  link_type       int NOT NULL,
+  url             varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '',
+  PRIMARY KEY (id),
+  constraint `fk_association_link_association`
+    foreign key (association_id) references association (id) on delete cascade
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;

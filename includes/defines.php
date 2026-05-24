@@ -65,3 +65,21 @@ const GLB_APPOINTMENT_TYPE_COMPETITION	 			= 1;
 $glb_appointment_types[GLB_APPOINTMENT_TYPE_COMPETITION] = 'Competition';
 
 
+/*** ASSOCIATION LINK TYPE ***/
+const GLB_ASSOCIATION_LINK_TYPE_WEB       = 1;
+const GLB_ASSOCIATION_LINK_TYPE_DISCORD   = 2;
+const GLB_ASSOCIATION_LINK_TYPE_INSTAGRAM = 3;
+const GLB_ASSOCIATION_LINK_TYPE_FACEBOOK  = 4;
+const GLB_ASSOCIATION_LINK_TYPE_TWITTER   = 5;
+const GLB_ASSOCIATION_LINK_TYPE_TIKTOK    = 6;
+const GLB_ASSOCIATION_LINK_TYPE_YOUTUBE   = 7;
+
+$glb_association_link_type[GLB_ASSOCIATION_LINK_TYPE_WEB]       = 'Web';
+$glb_association_link_type[GLB_ASSOCIATION_LINK_TYPE_DISCORD]   = 'Discord';
+$glb_association_link_type[GLB_ASSOCIATION_LINK_TYPE_INSTAGRAM] = 'Instagram';
+$glb_association_link_type[GLB_ASSOCIATION_LINK_TYPE_FACEBOOK]  = 'Facebook';
+$glb_association_link_type[GLB_ASSOCIATION_LINK_TYPE_TWITTER]   = 'Twitter / X';
+$glb_association_link_type[GLB_ASSOCIATION_LINK_TYPE_TIKTOK]    = 'TikTok';
+$glb_association_link_type[GLB_ASSOCIATION_LINK_TYPE_YOUTUBE]   = 'YouTube';
+
+

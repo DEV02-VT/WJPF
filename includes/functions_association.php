@@ -228,6 +228,10 @@ function   display_federation_associations()
         echo '</div>';
         echo '</div>';
         echo '</a>';
+        $links_html = get_association_links_html($member_association['id']);
+        if ($links_html != '') {
+            echo '<div class="d-flex justify-content-center gap-2 mt-1 mb-1">' . $links_html . '</div>';
+        }
         echo '</div>';
     }
 }

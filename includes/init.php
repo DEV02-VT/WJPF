@@ -21,5 +21,6 @@ include_once("includes/functions_select.php");
 include_once("includes/functions_image.php");
 include_once("includes/functions_association.php");
 include_once("includes/functions_news.php");
+include_once("includes/functions_association_link.php");
 
 ?>

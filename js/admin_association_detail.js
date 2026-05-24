@@ -478,4 +478,127 @@ $(document).ready(function() {
 		document.getElementById('admin_preview').src = 'img/boss.png';
 	});
 
+	// ── Association Link Management ─────────────────────────────
+
+	$(document).on("click", "#addLink", function () {
+		$('#link_id').val(-1);
+		$('#link_association_id').val($('#current_association_id').val());
+		$('#link_type').val('');
+		$('#link_url').val('');
+		$('#editLinkMsg').html('');
+		$('#editLinkModal').modal('show');
+	});
+
+	$('#editLinkModal').modal({ backdrop: 'static', keyboard: true });
+
+	$(document).on("click", ".edit_link", function () {
+		var id = $(this).attr('data-id');
+		ShowOverlay('Loading...');
+		$.ajax({
+			type: 'POST',
+			url: 'set/set_association_link.php',
+			data: { id: id, Action: 'Get' },
+			success: function (retdata) {
+				try {
+					var obj = JSON.parse(retdata);
+					if (obj['error'] !== '') {
+						$('#page_message').html('<div class="alert alert-danger">' + obj['error'] + '</div>');
+					} else {
+						var link = obj['link'];
+						$('#link_id').val(link.id);
+						$('#link_association_id').val(link.association_id);
+						$('#link_type').val(link.link_type);
+						$('#link_url').val(link.url);
+						$('#editLinkMsg').html('');
+						$('#editLinkModal').modal('show');
+					}
+				} catch (err) {
+					$('#page_message').html('<div class="alert alert-danger">' + retdata + '</div>');
+				}
+				HideOverlay();
+			},
+			error: function () {
+				$('#page_message').html('<div class="alert alert-danger">Error while loading link</div>');
+				HideOverlay();
+			}
+		});
+	});
+
+	$(document).on("click", "#saveLink", function () {
+		var $form = $('#formLinkPage');
+		if (!$form[0].checkValidity()) { $form[0].reportValidity(); return; }
+
+		var data = {
+			Action:         'Set',
+			id:             $('#link_id').val(),
+			association_id: $('#link_association_id').val(),
+			link_type:      $('#link_type').val(),
+			url:            $('#link_url').val()
+		};
+
+		$('#page_message').html('');
+		ShowOverlay('Saving...');
+		$.ajax({
+			type: 'POST',
+			url: 'set/set_association_link.php',
+			data: data,
+			success: function (retdata) {
+				try {
+					var obj = JSON.parse(retdata);
+					if (obj['error'] !== '') {
+						$('#editLinkMsg').html('<div class="alert alert-danger">' + obj['error'] + '</div>');
+						HideOverlay();
+					} else {
+						$('#editLinkModal').modal('hide');
+						window.location.reload();
+					}
+				} catch (err) {
+					$('#editLinkMsg').html('<div class="alert alert-danger">' + err + retdata + '</div>');
+					HideOverlay();
+				}
+			},
+			error: function () {
+				$('#editLinkMsg').html('<div class="alert alert-danger">Error while saving link</div>');
+				HideOverlay();
+			}
+		});
+	});
+
+	$('#deleteLinkModal').on('show.bs.modal', function (e) {
+		var button = $(e.relatedTarget);
+		$('#delete_link_id').val(button.data('id'));
+		$('#deleteLinkConfirmMsg').html('Do you really want to delete the link: <b>' + button.data('url') + '</b>?');
+		$('#deleteLinkMsg').html('');
+	});
+
+	$('#deleteLinkModal').modal({ backdrop: 'static', keyboard: true });
+
+	$(document).on("click", "#deleteLink", function () {
+		var id = $('#delete_link_id').val();
+		ShowOverlay('Deleting...');
+		$.ajax({
+			type: 'POST',
+			url: 'set/set_association_link.php',
+			data: { id: id, Action: 'Delete' },
+			success: function (retdata) {
+				try {
+					var obj = JSON.parse(retdata);
+					if (obj['error'] !== '') {
+						$('#deleteLinkMsg').html('<div class="alert alert-danger">' + obj['error'] + '</div>');
+					} else {
+						$('#deleteLinkModal').modal('hide');
+						window.location.reload();
+					}
+				} catch (err) {
+					$('#deleteLinkMsg').html('<div class="alert alert-danger">' + retdata + '</div>');
+				}
+				HideOverlay();
+			},
+			error: function () {
+				$('#deleteLinkMsg').html('<div class="alert alert-danger">Error while deleting link</div>');
+				HideOverlay();
+			}
+		});
+	});
+
 });

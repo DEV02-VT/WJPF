@@ -147,6 +147,22 @@ function create_news_status_select($id, $class, $selected, $required)
     echo '</select>';
 }
 
+function create_association_link_type_select($id, $class, $selected, $required)
+{
+    global $glb_association_link_type;
+    if ($required) {
+        $required = 'required';
+    } else {
+        $required = '';
+    }
+    echo '<select id="' . $id . '" name="' . $id . '" class="' . $class . '" ' . $required . '>';
+    echo '<option value=""></option>';
+    foreach ($glb_association_link_type as $key => $value) {
+        echo '<option value="' . $key . '"' . (($selected == $key) ? ' selected="selected"' : '') . '>' . $value . '</option>';
+    }
+    echo '</select>';
+}
+
 function create_appointment_type_select( $id, $class, $selected, $required)
 {
     global $glb_appointment_types;

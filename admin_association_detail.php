@@ -21,6 +21,9 @@ $contact_person = null;
 foreach ($admins as $a) {
     if ($a['contact_person']) { $contact_person = $a; break; }
 }
+
+global $glb_association_link_type;
+$links = get_association_links($id);
 ?>
 
 <div class="title-container">
@@ -58,6 +61,9 @@ foreach ($admins as $a) {
                         <?php else: ?>
                             <img class="table_img" src="img/minus.png" title="No federation member"> No federation member
                         <?php endif; ?>
+                    </div>
+                    <div class="mt-2">
+                        <?php echo get_association_links_html($id); ?>
                     </div>
                     <div class="mt-3">
                         <button type="button" class="btn btn-dark edit_association" data-id="<?php echo $association['id']; ?>">Edit association</button>
@@ -274,6 +280,50 @@ foreach ($admins as $a) {
                 <?php endforeach; ?>
                 </tbody>
             </table>
+        </div>
+    </div>
+
+    <!-- Links -->
+    <div class="card mb-4">
+        <div class="card-header d-flex justify-content-between align-items-center">
+            <strong>Links</strong>
+            <button type="button" class="btn btn-dark btn-sm" id="addLink">Add link</button>
+        </div>
+        <div class="card-body">
+            <?php if (!empty($links)): ?>
+            <div class="mb-3">
+                <?php echo get_association_links_html($id); ?>
+            </div>
+            <table class="table table-sm table-hover mb-0">
+                <thead>
+                    <tr>
+                        <th>Type</th>
+                        <th>URL</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                <?php foreach ($links as $link): ?>
+                <tr>
+                    <td><?php echo htmlspecialchars($glb_association_link_type[$link['link_type']] ?? ''); ?></td>
+                    <td><a href="<?php echo htmlspecialchars($link['url']); ?>" target="_blank"><?php echo htmlspecialchars($link['url']); ?></a></td>
+                    <td>
+                        <div style="display:flex">
+                            <img class="table_button edit_link" src="img/edit.png" data-id="<?php echo $link['id']; ?>" title="Edit">
+                            <img class="table_button delete_link" src="img/trash.png"
+                                 data-bs-toggle="modal" data-bs-target="#deleteLinkModal"
+                                 data-id="<?php echo $link['id']; ?>"
+                                 data-url="<?php echo htmlspecialchars($link['url']); ?>"
+                                 title="Delete">
+                        </div>
+                    </td>
+                </tr>
+                <?php endforeach; ?>
+                </tbody>
+            </table>
+            <?php else: ?>
+            <p class="text-muted mb-0">No links assigned yet.</p>
+            <?php endif; ?>
         </div>
     </div>
 
@@ -624,6 +674,64 @@ foreach ($admins as $a) {
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
         </div>
       </div>
+    </div>
+</div>
+
+<!-- Edit Link Modal -->
+<div class="modal fade" id="editLinkModal" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Link</h5>
+                <button type="button" class="close btn btn-dark" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">X</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div id="editLinkMsg"></div>
+                <form id="formLinkPage" method="post" role="form" autocomplete="on">
+                    <div class="row">
+                        <div class="col-12 mb-3">
+                            <label for="link_type">Type *</label>
+                            <?php create_association_link_type_select('link_type', 'form-select', 0, true); ?>
+                        </div>
+                        <div class="col-12 mb-3">
+                            <label for="link_url">URL *</label>
+                            <input type="url" id="link_url" name="link_url" class="form-control" maxlength="500" required>
+                        </div>
+                    </div>
+                    <input type="text" readonly class="form-control invisible" hidden id="link_id">
+                    <input type="text" readonly class="form-control invisible" hidden id="link_association_id">
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="saveLink" class="btn btn-dark">Save</button>
+                <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Delete Link Modal -->
+<div class="modal fade" id="deleteLinkModal" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-small" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Delete link</h5>
+                <button type="button" class="close btn btn-secondary" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div id="deleteLinkMsg"></div>
+                <div id="deleteLinkConfirmMsg" class="alert alert-warning"></div>
+                <input type="text" readonly class="form-control invisible" hidden id="delete_link_id">
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="deleteLink" class="btn btn-dark">Yes</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+            </div>
+        </div>
     </div>
 </div>
 
