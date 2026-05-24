@@ -204,6 +204,8 @@ foreach ($admins as $a) {
                                 <dd class="col-sm-8"><?php echo $contact_person['phone'] != '' ? htmlspecialchars($contact_person['phone']) : '<span class="text-muted">—</span>'; ?></dd>
                                 <dt class="col-sm-4">Birthday</dt>
                                 <dd class="col-sm-8"><?php echo $contact_person['birthday'] != '' && $contact_person['birthday'] != '0000-00-00' ? htmlspecialchars($contact_person['birthday']) : '<span class="text-muted">—</span>'; ?></dd>
+                                <dt class="col-sm-4">Passport Nr.</dt>
+                                <dd class="col-sm-8"><?php echo $contact_person['passport_number'] != '' ? htmlspecialchars($contact_person['passport_number']) : '<span class="text-muted">—</span>'; ?></dd>
                             </dl>
                         </div>
                         <div class="col-12 col-md-6">
