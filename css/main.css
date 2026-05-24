@@ -323,6 +323,10 @@ min-height: 250px;
     text-decoration: none;
 }
 
+.association-links a {
+    color: var(--grundfarbe-dunkelblau);
+}
+
 .board-user-grid {
 display: grid;
 grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
