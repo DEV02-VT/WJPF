@@ -49,6 +49,7 @@ CREATE TABLE user
   administrator             tinyint(1) DEFAULT 0 NOT NULL,
   board_role	            int DEFAULT 1 NOT NULL,
   wjpf_email                varchar(70)  CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  passport_number           varchar(40)  CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '',
   image                     varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
 
   PRIMARY KEY (id)

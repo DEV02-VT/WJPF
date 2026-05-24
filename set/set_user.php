@@ -128,7 +128,7 @@ switch ($action)
                 echo json_encode($retdata);
                 return;
             }
-            $retdata['error'] =  create_user($user);
+            create_user($user);
         }
         break;
 	case 'Delete':
@@ -218,10 +218,10 @@ function get_user_input_data(&$user) : string
     $user['town']  = decode(filter_input(INPUT_POST, "town"));
     $user['country_code']  = decode(filter_input(INPUT_POST, "country_code"));
     $user['administrator']  = decode(filter_input(INPUT_POST, "administrator"));
-    $user['administrator']  = decode(filter_input(INPUT_POST, "administrator"));
     $user['image']  = decode(filter_input(INPUT_POST, "image"));
     $user['new_image']  = decode(filter_input(INPUT_POST, "new_image"));
     $user['wjpf_email']  = decode(filter_input(INPUT_POST, "wjpf_email"));
+    $user['passport_number']  = decode(filter_input(INPUT_POST, "passport_number"));
     $user['image_name']  = decode(filter_input(INPUT_POST, "image_name"));
     $user['clear_image']  = decode(filter_input(INPUT_POST, "clear_image"));
     return '';

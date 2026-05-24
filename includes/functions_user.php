@@ -169,11 +169,12 @@ function update_user($user)
     $administrator = escape($user['administrator']);
     $board_role = escape($user['board_role']);
     $wjpf_email = escape($user['wjpf_email']);
+    $passport_number = escape($user['passport_number'] ?? '');
     $image = escape($user['image']);
 
-    $sql = "UPDATE user SET first_name='$first_name', last_name='$last_name', email='$email', status='$status', phone='$phone', birthday='$birthday', nationality_code='$nationality_code', 
-    street='$street', house_number='$house_number', zip='$zip', town='$town', country_code='$country_code', administrator='$administrator', board_role='$board_role', 
-    wjpf_email='$wjpf_email', image='$image'WHERE id='$id'";
+    $sql = "UPDATE user SET first_name='$first_name', last_name='$last_name', email='$email', status='$status', phone='$phone', birthday='$birthday', nationality_code='$nationality_code',
+    street='$street', house_number='$house_number', zip='$zip', town='$town', country_code='$country_code', administrator='$administrator', board_role='$board_role',
+    wjpf_email='$wjpf_email', passport_number='$passport_number', image='$image'WHERE id='$id'";
 //    echo $sql;
     query($sql);
 }
@@ -195,6 +196,7 @@ function create_user($user)
     $administrator = escape($user['administrator']);
     $board_role = escape($user['board_role']);
     $wjpf_email = escape($user['wjpf_email']);
+    $passport_number = escape($user['passport_number'] ?? '');
     $image = escape($user['image']);
 	if ($status == GLB_USER_STATUS_NEW)
 	{
@@ -204,11 +206,11 @@ function create_user($user)
 	{
 		$password_reset_key = '';
 	}
-	                    
+
     $sql = "INSERT INTO user(first_name, last_name, email, status, phone, birthday, nationality_code, street, house_number, zip,
-	town, country_code, administrator, board_role, password_reset_key, wjpf_email, image) VALUES 
+	town, country_code, administrator, board_role, password_reset_key, wjpf_email, passport_number, image) VALUES
 	('$first_name', '$last_name', '$email', '$status', '$phone', '$birthday', '$nationality_code', '$street', '$house_number', '$zip',
-	'$town', '$country_code', '$administrator', '$board_role', '$password_reset_key', '$wjpf_email', '$image')";
+	'$town', '$country_code', '$administrator', '$board_role', '$password_reset_key', '$wjpf_email', '$passport_number', '$image')";
     query($sql);
 	$id = sql_insert_id();
 	
@@ -223,8 +225,7 @@ function create_user($user)
 	{
     	return send_user_confirmation_mail($id, $first_name . ' ' . $last_name, $email, $password_reset_key);
 	}*/
-	$user['id'] = $id;
-    return '';
+    return $id;
 }
 function allow_user_delete($id)
 {
@@ -559,7 +560,7 @@ function CheckUserLogin() // checks if a user is logged in otherwise redirects t
 function CheckBoardUserOrAdmin() // checks if a user is admin or redirects to index.php
 {
     CheckUserLogin();
-    if (!user_is_admin() and !user_is_board_member())
+    if (!user_is_admin() and !user_is_board_user())
     {
         set_message('<div class="alert alert-danger text-center" role="alert">You do not have permission to access this page!</div>');
         redirect("index.php");

@@ -137,7 +137,8 @@ $(document).ready(function() {
 			board_role: 1,
 			image: '',
 			preview: 'img/boss.png',
-			wjpf_email: ''
+			wjpf_email: '',
+			passport_number: ''
 		};
 		edit_user(user);
 	});
@@ -206,6 +207,7 @@ $(document).ready(function() {
 		$('#user_image').val(user.image);
 		$('#user_clear_image').val(0);
 		$('#user_wjpf_email').val(user.wjpf_email);
+		$('#user_passport_number').val(user.passport_number || '');
 		document.getElementById('preview').src = user.image;
 		$('#user_picture').val('');
 		$('#editUserMsg').html('');
@@ -250,6 +252,7 @@ $(document).ready(function() {
 		}
 		var board_role = $('#user_board_role').val();
 		var wjpf_email = $('#user_wjpf_email').val();
+		var passport_number = $('#user_passport_number').val();
 		var image = $('#user_image').val();
 		var clear_image = $('#user_clear_image').val();
 		var new_image = '';
@@ -276,6 +279,7 @@ $(document).ready(function() {
 			administrator: administrator,
 			board_role: board_role,
 			wjpf_email: wjpf_email,
+			passport_number: passport_number,
 			image_name: image_name,
 			new_image: new_image,
 			image: image,

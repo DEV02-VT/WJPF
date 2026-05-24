@@ -22,6 +22,13 @@ if ($action == '')
 switch ($action)
 {
     case 'Delete':
+        if (!user_is_admin())
+        {
+            $retdata['error'] = 'No rights!';
+            echo json_encode($retdata);
+            return;
+        }
+        break;
     case 'Set':
         if (!user_is_admin() and !user_is_board_user())
         {
@@ -49,7 +56,7 @@ switch ($action)
 			echo json_encode($retdata);
 			return;
 		}
-        if (!user_is_admin() && !user_is_board_association() && $id != get_login_user_id())
+        if (!user_is_admin() && !user_is_board_user() && $id != get_login_user_id())
         {
             $retdata['error'] = 'No rights!';
             echo json_encode($retdata);

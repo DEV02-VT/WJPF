@@ -99,6 +99,10 @@ $lang = get_language();
                                         <label for="user_nationality_code">Nationality *</label>
                                         <?php create_country_select('user_nationality_code', 'form-select', true); ?>
                                     </div>
+                                    <div class="col-12 mb-2" id="user_passport_number_frame">
+                                        <label for="user_passport_number">Passport number</label>
+                                        <input type="text" name="user_passport_number" id="user_passport_number" class="form-control" maxlength="40">
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-6">
