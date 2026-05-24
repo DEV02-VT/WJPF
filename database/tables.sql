@@ -88,6 +88,7 @@ CREATE TABLE association_admin
     association_id    	int NOT  null,
     user_id             int NOT NULL,
     role                varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci,
+    contact_person  	tinyint(1) DEFAULT 0 NOT NULL,
 
     PRIMARY KEY (id),
     constraint `fk_association_admin_association` foreign key (association_id) references association (id) on delete cascade,

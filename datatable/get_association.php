@@ -79,6 +79,7 @@ $columns = array(
 	}),
 	array( 'db' => 'id', 'dt' => 8, 'formatter' => function( $d, $row ) {
 		$buttons = '<div style="display:flex">';
+		$buttons = $buttons . '<a href="admin_association_detail.php?id=' . $d . '"><img class="table_button" src="img/detail.png" title="View details"></a>';
 		$buttons = $buttons . '<img class="table_button edit_association"  src="img/edit.png  " data-id="' . $d . '" title="Edit association">';
 		$buttons = $buttons . '<img class="table_button delete_association"  src="img/trash.png" data-bs-toggle="modal" data-bs-target="#deleteAssociationModal"  data-id="' . $d . '"  data-name="' . $row[2] . '" title="Delete association">';
 		$buttons = $buttons . '</div>';
