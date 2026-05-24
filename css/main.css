@@ -323,6 +323,11 @@ min-height: 250px;
     text-decoration: none;
 }
 
+.association-links {
+    margin-bottom: -30px;
+}
+
+
 .association-links a {
     color: var(--grundfarbe-dunkelblau);
 }

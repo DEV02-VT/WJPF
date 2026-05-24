@@ -223,12 +223,12 @@ function   display_federation_associations()
         echo '<div class="col-12 association_frame_name d-flex justify-content-center">';
         echo '<b>' . $member_association['name'] . '</b>';
         echo '</div>';
-        echo '<div class="col-12 user_frame_name d-flex justify-content-center">';
+        echo '<div class="col-12 user_frame_name d-flex justify-content-center mt-3">';
         echo '<img class="country_flag" src="img/flags/' . $member_association['nationality_code'] . '.png"> <b>' . get_country_name($member_association['nationality_code'], 'en') . '</b>';
         echo '</div>';
         $links_html = get_association_links_html($member_association['id']);
         if ($links_html != '') {
-            echo '<div class="d-flex justify-content-center gap-2 mt-1 mb-1 association-links">' . $links_html . '</div>';
+            echo '<div class="col-12  d-flex justify-content-center gap-2 association-links">' . $links_html . '</div>';
         }
         echo '</div>';
         echo '</a>';
