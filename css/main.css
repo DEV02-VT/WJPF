@@ -672,10 +672,10 @@ opacity: 0.36;
 
 .appointment-inner{
     border: 1px solid var(--primary-color);
-    width: 15em;
+    width: 18em;
     border-radius: 8px;
     padding: 5px;
-    height: 12em;
+    height: 15em;
 }
 /*.appointment-inner.trophy{
     background-color: rgba(217, 55, 6, .2);
