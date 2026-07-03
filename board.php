@@ -22,7 +22,7 @@ include_once("includes/nav_base.php");
         </div>
     </div>
 
-    <div class="board-user-grid">
+    <div class="board-user-grid board-tiles">
         <?php
             display_board_users();
         ?>

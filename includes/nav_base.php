@@ -35,7 +35,7 @@
                                 <li><a class="dropdown-item" href="admin_association.php">Associations</a></li>
                                 <li><a class="dropdown-item" href="admin_user.php">User</a></li>
                                 <li><a class="dropdown-item" href="admin_news.php">News</a></li>
-                                <hr>
+                                <li><hr class="dropdown-divider"></li>
                             <?php } ?>
                             <li><a class="dropdown-item" href="admin_appointment.php">Appointments</a></li>
                         </ul>

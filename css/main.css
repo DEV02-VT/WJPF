@@ -61,12 +61,47 @@ body, html {
     font-weight: bold;
 }
 
-.nav-link:hover {
+.nav-link:hover,
+.nav-link:focus,
+.nav-link.show,
+.nav-link.dropdown-toggle.show {
     color: var(--grundfarbe-hellblau);
 }
 
-.navbar-nav .nav-link.active {
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link.show {
     color: var(--grundfarbe-hellblau);
+}
+
+/* Popup-/Dropdown-Menüs an das Seiten-Design angepasst */
+.navbar .dropdown-menu {
+    background-color: var(--grundfarbe-hell);
+    border: var(--bs-border-width) solid var(--grundfarbe-gruen);
+    border-radius: 17px;
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175);
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.navbar .dropdown-menu .dropdown-item {
+    color: var(--grundfarbe-hellblau);
+    font-weight: bold;
+    font-size: 1.2em;
+    border-radius: 10px;
+    padding: 0.35rem 1rem;
+}
+
+.navbar .dropdown-menu .dropdown-item:hover,
+.navbar .dropdown-menu .dropdown-item:focus,
+.navbar .dropdown-menu .dropdown-item.active {
+    background-color: var(--grundfarbe-dunkelblau);
+    color: var(--grundfarbe-hell);
+}
+
+.navbar .dropdown-menu hr {
+    border-top: 1px solid var(--grundfarbe-gruen);
+    opacity: 0.5;
+    margin: 0.4rem 0.5rem;
 }
 .bgimg_1{
   background-image: url('../img/puzzlepieces.jpg');
@@ -323,6 +358,68 @@ min-height: 250px;
     text-decoration: none;
 }
 
+/* Vorstands-Kacheln an das Seiten-Design angepasst */
+.board-tiles .user_frame {
+    background-color: #ffffff;
+    border: var(--bs-border-width) solid var(--grundfarbe-gruen);
+    transition: transform .2s ease, box-shadow .2s ease;
+    margin-bottom: 0;
+    width: 100%;
+}
+
+.board-tiles .user_frame:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 1.5rem 3.5rem rgba(2, 51, 94, .25) !important;
+}
+
+.board-tiles .user_frame_image {
+    margin-bottom: 0.75rem;
+}
+
+.board-tiles .association_img {
+    height: 150px;
+    width: 150px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 3px solid var(--grundfarbe-hellblau);
+    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, .15);
+    background-color: var(--grundfarbe-hell);
+}
+
+/* Name (2. Kind der Zeile): hervorheben, Platz für 2 Zeilen reservieren */
+.board-tiles .user_frame > .user_frame_name:nth-child(2) {
+    align-items: center;
+    min-height: 3.2em; /* ~2 Zeilen bei font-size 1.3em / line-height 1.2 */
+}
+
+.board-tiles .user_frame > .user_frame_name:nth-child(2) b {
+    color: var(--grundfarbe-dunkelblau);
+    font-size: 1.3em;
+    line-height: 1.2;
+}
+
+/* Rolle (3. Kind der Zeile): in Markengrün */
+.board-tiles .user_frame > .user_frame_name:nth-child(3) b {
+    color: var(--grundfarbe-gruen);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.95em;
+}
+
+.board-tiles .user_frame_name {
+    text-align: center;
+    margin-top: 0.15rem;
+}
+
+.board-tiles .mail_image {
+    height: 1.5em;
+    transition: transform .15s ease;
+}
+
+.board-tiles .mail_image:hover {
+    transform: scale(1.15);
+}
+
 .association-links {
     margin-bottom: -30px;
 }
@@ -339,6 +436,12 @@ gap: 20px;
 overflow: hidden;
 justify-items: center;
 padding: 1em;
+}
+
+/* Board-Grid: etwas mehr Abstand zwischen den Personen-Kacheln */
+.board-tiles {
+    gap: 28px;
+    padding: 1.25em;
 }
 
 .championship_tile_frame {
