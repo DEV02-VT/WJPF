@@ -3,6 +3,7 @@ chdir('..');
 include_once("includes/init.php");
 include_once("includes/functions_user.php");
 include_once("includes/functions_appointment.php");
+include_once("includes/functions_association_admin.php");
 //header("Access-Control-Allow-Origin: *");
 
 $action  = decode(filter_input(INPUT_POST, "Action"));
@@ -15,7 +16,7 @@ $retdata['error'] = '';
 
 if ($action == '')
 {
-    $retdata['error'] = 'Ungültiger Parameter' . ' action';
+    $retdata['error'] = 'Invalid parameter' . ' action';
 	echo json_encode($retdata);
     return;
 }
@@ -37,25 +38,32 @@ switch ($action)
 		$id  = decode(filter_input(INPUT_POST, "id"));
 		if ($id == '')
 		{
-			$retdata['error'] = 'Ungültiger Parameter id';
+			$retdata['error'] = 'Invalid parameter id';
 			echo json_encode($retdata);
 			return;
 		}
-		$retdata['appointment'] = get_appointment($id);
+		$appointment = get_appointment($id);
+		if (!$appointment || !user_can_manage_appointment_association($appointment['association_id']))
+		{
+			$retdata['error'] = 'No rights!';
+			echo json_encode($retdata);
+			return;
+		}
+		$retdata['appointment'] = $appointment;
         break;
 	case 'Set':
 		$appointment = array();
         $appointment['type']  = decode(filter_input(INPUT_POST, "type"));
         if ($appointment['type'] == '')
         {
-            $retdata['error'] = 'Ungültiger Parameter: type';
+            $retdata['error'] = 'Invalid parameter: type';
             echo json_encode($retdata);
             return;
         }
         $appointment['headline']  = decode(filter_input(INPUT_POST, "headline"));
         if ($appointment['headline'] == '')
         {
-            $retdata['error'] = 'Ungültiger Parameter: headline';
+            $retdata['error'] = 'Invalid parameter: headline';
             echo json_encode($retdata);
             return;
         }
@@ -63,7 +71,7 @@ switch ($action)
 		$appointment['begin']  = decode(filter_input(INPUT_POST, "begin"));
 		if ($appointment['begin'] == '')
 		{
-			$retdata['error'] = 'Ungültiger Parameter: begin';
+			$retdata['error'] = 'Invalid parameter: begin';
 			echo json_encode($retdata);
 			return;
 		}
@@ -72,7 +80,20 @@ switch ($action)
 		$appointment['author_id']  = decode(filter_input(INPUT_POST, "author_id"));
 		if ($appointment['author_id'] == '')
 		{
-			$retdata['error'] = 'Ungültiger Parameter: author_id';
+			$retdata['error'] = 'Invalid parameter: author_id';
+			echo json_encode($retdata);
+			return;
+		}
+		$appointment['association_id']  = decode(filter_input(INPUT_POST, "association_id"));
+		if ($appointment['association_id'] == '')
+		{
+			$retdata['error'] = 'Invalid parameter: association_id';
+			echo json_encode($retdata);
+			return;
+		}
+		if (!user_can_manage_appointment_association($appointment['association_id']))
+		{
+			$retdata['error'] = 'No rights!';
 			echo json_encode($retdata);
 			return;
 		}
@@ -86,6 +107,13 @@ switch ($action)
         $appointment['longitude']  = decode(filter_input(INPUT_POST, "longitude"));
 		if ($appointment['id'] > 0)
 		{
+			$existing = get_appointment($appointment['id']);
+			if (!$existing || !user_can_manage_appointment_association($existing['association_id']))
+			{
+				$retdata['error'] = 'No rights!';
+				echo json_encode($retdata);
+				return;
+			}
 			update_appointment($appointment);
 		}
 		else
@@ -101,10 +129,17 @@ switch ($action)
 			echo json_encode($retdata);
 			return;
 		}
+		$existing = get_appointment($deleteid);
+		if (!$existing || !user_can_manage_appointment_association($existing['association_id']))
+		{
+			$retdata['error'] = 'No rights!';
+			echo json_encode($retdata);
+			return;
+		}
 		delete_appointment($deleteid);
         break;
 	default:
-        $retdata['error'] = 'Unbekannte Aktion ' . $action;
+        $retdata['error'] = 'Unknown action: ' . $action;
         break;
         
 }

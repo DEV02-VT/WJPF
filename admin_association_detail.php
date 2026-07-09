@@ -3,12 +3,18 @@ include_once("includes/header.php");
 include_once("includes/nav_base.php");
 include_once("includes/functions_association_admin.php");
 
-CheckBoardUserOrAdmin();
+CheckBoardAdminOrAssociationAdmin();
 
 $id = intval(filter_input(INPUT_GET, 'id'));
 $association = get_association($id);
 
 if (empty($association)) {
+    header('Location: admin_association.php');
+    exit;
+}
+
+// Association admins may only open the detail page of their own associations.
+if (!user_can_edit_association($id)) {
     header('Location: admin_association.php');
     exit;
 }

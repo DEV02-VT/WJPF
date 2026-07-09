@@ -1,7 +1,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="index.php"><img src="img/logo_wjpf.png" height="70" class="d-inline-block align-top brand_image" alt=""></a>
+        <a class="navbar-brand" href="index.php"><img src="img/logo_ijpa.png" height="70" class="d-inline-block align-top brand_image" alt=""></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <img src="img/menu.png" class="d-inline-block align-top brand_image" alt="">
         </button>
@@ -26,18 +26,18 @@
                         <li><a class="dropdown-item" href="news.php">News</a></li>
                     </ul>
                 </li>
-                <?php if (user_is_admin() || user_is_board_user()){ ?>
+                <?php if (user_is_admin() || user_is_board_user() || user_is_association_admin()){ ?>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" id="navbarAdminDropdown" role="button"
                            data-bs-toggle="dropdown" aria-expanded="false">Administration</a>
                         <ul class="dropdown-menu" aria-labelledby="navbarAdminDropdown">
+                            <li><a class="dropdown-item" href="admin_association.php">Associations</a></li>
+                            <li><a class="dropdown-item" href="admin_appointment.php">Appointments</a></li>
                             <?php if (user_is_admin() || user_is_board_user()){ ?>
-                                <li><a class="dropdown-item" href="admin_association.php">Associations</a></li>
+                                <li><hr class="dropdown-divider"></li>
                                 <li><a class="dropdown-item" href="admin_user.php">User</a></li>
                                 <li><a class="dropdown-item" href="admin_news.php">News</a></li>
-                                <li><hr class="dropdown-divider"></li>
                             <?php } ?>
-                            <li><a class="dropdown-item" href="admin_appointment.php">Appointments</a></li>
                         </ul>
                     </li>
                 <?php } ?>

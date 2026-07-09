@@ -74,6 +74,40 @@ function delete_association_admin($id)
     query($sql);
 }
 
+function get_association_ids_for_user($user_id)
+{
+    $user_id = escape($user_id);
+    $sql = "SELECT association_id FROM association_admin WHERE user_id = $user_id";
+    $rows = query_array($sql);
+    $ids = array();
+    foreach ($rows as $row) {
+        $ids[] = (int)$row['association_id'];
+    }
+    return $ids;
+}
+
+function user_is_association_admin($user_id = null)
+{
+    if ($user_id === null) {
+        $user_id = get_login_user_id();
+    }
+    if ($user_id == 0) {
+        return false;
+    }
+    return count(get_association_ids_for_user($user_id)) > 0;
+}
+
+function user_can_edit_association($association_id): bool
+{
+    if (user_is_admin() || user_is_board_user()) {
+        return true;
+    }
+    if ($association_id === null || $association_id === '') {
+        return false;
+    }
+    return in_array((int)$association_id, get_association_ids_for_user(get_login_user_id()), true);
+}
+
 function set_contact_person($association_id, $admin_id)
 {
     $association_id = escape($association_id);

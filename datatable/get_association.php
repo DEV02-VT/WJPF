@@ -110,6 +110,13 @@ if ($filter != '-1')
     else if ($filter == GLB_ASSOCIATION_FILTER_NON_MEMBERS)
         $where = 'member = 0';
 }
+// Association admins (neither board nor global admin) only see their own associations.
+if (!user_is_admin() && !user_is_board_user())
+{
+    $ids = get_association_ids_for_user(get_login_user_id());
+    $restriction = (count($ids) == 0) ? '0' : ('id IN (' . implode(',', array_map('intval', $ids)) . ')');
+    $where = ($where == '') ? $restriction : ('(' . $where . ') AND ' . $restriction);
+}
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  * If you just want to use the basic configuration for DataTables with PHP
  * server-side, there is no need to edit below this line.

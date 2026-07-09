@@ -42,6 +42,7 @@ function update_appointment(array $appointment): void
     $begin = escape($appointment['begin']);
     $end = escape($appointment['end']);
     $author_id = escape($appointment['author_id']);
+    $association_id = escape($appointment['association_id']);
     $type = escape($appointment['type']);
     $street = escape($appointment['street']);
     $house_number = escape($appointment['house_number']);
@@ -51,10 +52,10 @@ function update_appointment(array $appointment): void
     $latitude = escape($appointment['latitude']);
     $longitude = escape($appointment['longitude']);
 
-    $sql = "UPDATE appointment SET headline='$headline', link='$link', place='$place', begin='$begin', end='$end', author_id='$author_id',
+    $sql = "UPDATE appointment SET headline='$headline', link='$link', place='$place', begin='$begin', end='$end', author_id='$author_id', association_id='$association_id',
     type='$type',street='$street',house_number='$house_number',zip='$zip',town='$town',country_code='$country_code',latitude='$latitude', longitude='$longitude' WHERE id='$id'";
 //    echo $sql;
-    query($sql);  
+    query($sql);
 }
 
 function create_appointment(array $appointment): string|int
@@ -65,6 +66,7 @@ function create_appointment(array $appointment): string|int
     $begin = escape($appointment['begin']);
     $end = escape($appointment['end']);
     $author_id = escape($appointment['author_id']);
+    $association_id = escape($appointment['association_id']);
     $type = escape($appointment['type']);
     $street = escape($appointment['street']);
     $house_number = escape($appointment['house_number']);
@@ -74,8 +76,8 @@ function create_appointment(array $appointment): string|int
     $latitude = escape($appointment['latitude']);
     $longitude = escape($appointment['longitude']);
 
-    $sql = "INSERT INTO appointment(headline, link, place, begin, end, author_id, type, street, house_number, zip, town, country_code, latitude, longitude) VALUES 
-	('$headline', '$link', '$place', '$begin', '$end', '$author_id', '$type', '$street', '$house_number', '$zip', '$town', '$country_code', '$latitude', '$longitude')";
+    $sql = "INSERT INTO appointment(headline, link, place, begin, end, author_id, association_id, type, street, house_number, zip, town, country_code, latitude, longitude) VALUES
+	('$headline', '$link', '$place', '$begin', '$end', '$author_id', '$association_id', '$type', '$street', '$house_number', '$zip', '$town', '$country_code', '$latitude', '$longitude')";
     query($sql);  
 	$id = sql_insert_id();
     return $id;
@@ -100,6 +102,32 @@ function delete_appointment(int $id) : string
     return '';
 }
 
+
+function get_appointment_associations_for_current_user(): array
+{
+    if (user_is_admin() || user_is_board_user()) {
+        return get_all_associations();
+    }
+    $ids = get_association_ids_for_user(get_login_user_id());
+    if (count($ids) == 0) {
+        return array();
+    }
+    $in = implode(',', array_map('intval', $ids));
+    $sql = "SELECT id, name from association WHERE id IN ($in) ORDER BY name";
+    return query_array($sql);
+}
+
+function user_can_manage_appointment_association($association_id): bool
+{
+    if (user_is_admin() || user_is_board_user()) {
+        return true;
+    }
+    if ($association_id === null || $association_id === '') {
+        return false;
+    }
+    $ids = get_association_ids_for_user(get_login_user_id());
+    return in_array((int)$association_id, $ids, true);
+}
 
 function display_future_appointments()
 {

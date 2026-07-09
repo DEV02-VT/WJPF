@@ -13,7 +13,7 @@ $retdata['error'] = '';
 
 if ($action == '')
 {
-    $retdata['error'] = 'Ungültiger Parameter' . ' action';
+    $retdata['error'] = 'Invalid parameter' . ' action';
 	echo json_encode($retdata);
     return;
 }
@@ -145,28 +145,28 @@ switch ($action)
 		$email  = decode(filter_input(INPUT_POST, "email"));
 		if ($email == '')
 		{
-			$retdata['error'] = 'Ungültiger Parameter: email';
+			$retdata['error'] = 'Invalid parameter: email';
 			echo json_encode($retdata);
 			return;
 		}
 		$password  = decode(filter_input(INPUT_POST, "password"));
 		if ($password == '')
 		{
-			$retdata['error'] = 'Ungültiger Parameter: password';
+			$retdata['error'] = 'Invalid parameter: password';
 			echo json_encode($retdata);
 			return;
 		}
 		$request_key  = decode(filter_input(INPUT_POST, "request_key"));
 		if ($request_key == '')
 		{
-			$retdata['error'] = 'Ungültiger Parameter: request_key';
+			$retdata['error'] = 'Invalid parameter: request_key';
 			echo json_encode($retdata);
 			return;
 		}
 		$token = decode(filter_input(INPUT_POST, "token"));
 		if ($token == '')
 		{
-			$retdata['error'] = 'Ungültiger Parameter: token';
+			$retdata['error'] = 'Invalid parameter: token';
 			echo json_encode($retdata);
 			return;
 		}
@@ -174,7 +174,7 @@ switch ($action)
 		$retdata['error'] = password_reset($email, $request_key, $password, $token);
         break;
     default:
-        $retdata['error'] = 'Unbekannte Aktion ' . $action;
+        $retdata['error'] = 'Unknown action: ' . $action;
         break;
         
 }

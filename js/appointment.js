@@ -12,10 +12,10 @@ $(document).ready(function() {
 		"order": [[0, "desc"]],
 		"columnDefs": [
 		  {
-			"targets": [1, 2, 3, 4, 5, 6],
+			"targets": [1, 2, 3, 4, 5, 6, 7],
 			"orderable": false
 		  },
-			{ responsivePriority: 1, targets: [3,6]},		
+			{ responsivePriority: 1, targets: [4,7]},
 			{ responsivePriority: 2, targets: -1 }
 		],
 //		"scrollX": true,
@@ -37,7 +37,7 @@ $(document).ready(function() {
         // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
         // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
         var modal = $(this);
-        $('#deleteMsg').html('Dou you want to delete the appointment: <br><br><b>' + name + '</b>?');
+        $('#deleteMsg').html('Do you want to delete the appointment: <br><br><b>' + name + '</b>?');
         modal.find('#deleteid').val(id);
 		$('#deleteAppointmentMsg').html('');		
     });
@@ -103,6 +103,7 @@ $(document).ready(function() {
 			begin : '',
 			end : '',
 			author_id: document.getElementById("user_id").value,
+			association_id : '',
 			type : 1,
 			street : '',
 			house_number : '',
@@ -168,6 +169,7 @@ $(document).ready(function() {
 		$('#appointment-begin').val(appointment.begin);
 		$('#appointment-end').val(appointment.end);
 		$('#appointment-author_id').val(appointment.author_id);
+		$('#appointment-association_id').val(appointment.association_id);
 		$('#appointment-type').val(appointment.type);
 		$('#appointment-street').val(appointment.street);
 		$('#appointment-house_number').val(appointment.house_number);
@@ -205,6 +207,7 @@ $(document).ready(function() {
 		var begin = $('#appointment-begin').val();
 		var end = $('#appointment-end').val();
 		var author_id = $('#appointment-author_id').val();
+		var association_id = $('#appointment-association_id').val();
 		var type = $('#appointment-type').val();
 		var street = $('#appointment-street').val();
 		var house_number = $('#appointment-house_number').val();
@@ -222,6 +225,7 @@ $(document).ready(function() {
 		   	begin : begin,
 		   	end : end,
 		   	author_id : author_id,
+			association_id : association_id,
 			type :type,
 			street : street,
 			house_number : house_number,

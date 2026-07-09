@@ -35,4 +35,7 @@ CREATE TABLE association_admin
     constraint `fk_association_admin_user` foreign key (user_id) references user (id) on delete cascade
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+ALTER TABLE appointment ADD COLUMN association_id int NULL AFTER author_id;
+ALTER TABLE appointment ADD CONSTRAINT `fk_appointment_association` FOREIGN KEY (association_id) REFERENCES association (id) ON DELETE SET NULL;
+
 

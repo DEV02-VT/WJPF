@@ -96,7 +96,7 @@ function show_country_icon($code, $language, $class = '', $style = '')
 	{
 		case 'BY':
 		case 'RU':
-			$code = 'wjpf';
+			$code = 'ijpa';
 			break;
 	}
 	if ($class == '')

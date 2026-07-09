@@ -132,6 +132,22 @@ function create_country_select( $id, $class, $required, $empty = false, $languag
     echo '</select>';
 }
 
+function create_association_select($id, $class, $associations, $selected, $required)
+{
+    if (!isset($id) || $id == "")
+    {
+        $id = "select_association";
+    }
+    $required = $required ? 'required' : '';
+    echo '<select id="' . $id . '" name="' . $id . '" class ="' . $class . '" ' . $required . '>';
+    echo '<option value=""></option>';
+    foreach ($associations as $association)
+    {
+        echo '<option value="' . $association['id'] . '"' . (($selected == $association['id']) ? ' selected="selected"' : '') . '>' . htmlspecialchars($association['name']) . '</option>';
+    }
+    echo '</select>';
+}
+
 function create_news_status_select($id, $class, $selected, $required)
 {
     global $glb_news_status;

@@ -7,8 +7,8 @@
 	<meta charset="UTF-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>International Jigsaw Puzzle Association (WJPF)</title>
-	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="img/wjpf.ico" />
+    <title>International Jigsaw Puzzle Association (IJPA)</title>
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="img/ijpa.ico" />
 	<link rel="stylesheet" href="css/bootstrap/5.3.1/bootstrap.css">
 	<link rel="stylesheet" href="css/bootstrap-icons/1.11.3/bootstrap-icons.min.css">
 	<link rel="stylesheet" href="css/datatables/1.13.6/datatables.min.css">

@@ -146,8 +146,8 @@ function is_user_admin($id)
 function is_user_board_user($id)
 {
 	$user = get_user($id);
-	if ($user) 
-		return $user['board_role'] != GLB_USER_BOARD_ROLE_NO_MEMBER;
+	if ($user)
+		return $user['board_role'] > GLB_USER_BOARD_ROLE_NO_MEMBER;
     return false;
 }
 
@@ -561,6 +561,17 @@ function CheckBoardUserOrAdmin() // checks if a user is admin or redirects to in
 {
     CheckUserLogin();
     if (!user_is_admin() and !user_is_board_user())
+    {
+        set_message('<div class="alert alert-danger text-center" role="alert">You do not have permission to access this page!</div>');
+        redirect("index.php");
+        exit;
+    }
+}
+
+function CheckBoardAdminOrAssociationAdmin() // admin, board user or association admin; otherwise redirect to index.php
+{
+    CheckUserLogin();
+    if (!user_is_admin() and !user_is_board_user() and !user_is_association_admin())
     {
         set_message('<div class="alert alert-danger text-center" role="alert">You do not have permission to access this page!</div>');
         redirect("index.php");

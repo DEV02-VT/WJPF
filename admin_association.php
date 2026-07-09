@@ -2,7 +2,7 @@
 include_once("includes/header.php");
 include_once("includes/nav_base.php");
 
-CheckBoardUserOrAdmin();
+CheckBoardAdminOrAssociationAdmin();
 $lang = get_language();
 ?>
    
@@ -37,10 +37,12 @@ $lang = get_language();
 </div>
 
  <div class="full_container">
+     <?php if (user_is_admin() || user_is_board_user()){ ?>
      <button type="button" name="newAssociation" id="newAssociation" class="btn btn-dark mt-3 mb-3">Create new association</button>
      <button type="button" name="showMemberMaillist" id="showMemberMaillist" class="btn btn-dark mt-3 mb-3">Show member mail list</button>
      <button type="button" name="showNonMemberMaillist" id="showNonMemberMaillist" class="btn btn-dark mt-3 mb-3">Show non member mail list</button>
      <button type="button" name="showAllAssociationslist" id="showAllAssociationslist" class="btn btn-dark mt-3 mb-3">Show all associations mail list</button>
+     <?php } ?>
     <table id="association_table" class="table desktop_table">
     <thead>
         <th></th>
@@ -235,7 +237,7 @@ $lang = get_language();
                 </div><br>
             </div>
             <div class="modal-footer">
-                <a href="mailto:board@wjpf.org?bcc=<?php echo get_member_associations_emails();?>"><button type="button" form="modal-details" class="btn btn-dark">Open Bcc Email</button></a>
+                <a href="mailto:board@internationalpuzzle.org?bcc=<?php echo get_member_associations_emails();?>"><button type="button" form="modal-details" class="btn btn-dark">Open Bcc Email</button></a>
                 <button type="button" name="copyMemberMaillist" id="copyMemberMaillist" form="modal-details" class="btn btn-dark">Copy to clipboard</button>
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
             </div>
@@ -261,7 +263,7 @@ $lang = get_language();
                 </div><br>
             </div>
             <div class="modal-footer">
-                <a href="mailto:board@wjpf.org?bcc=<?php echo get_non_member_associations_emails();?>"><button type="button" form="modal-details" class="btn btn-dark">Open Bcc Email</button></a>
+                <a href="mailto:board@internationalpuzzle.org?bcc=<?php echo get_non_member_associations_emails();?>"><button type="button" form="modal-details" class="btn btn-dark">Open Bcc Email</button></a>
                 <button type="button" name="copyNonMemberMaillist" id="copyNonMemberMaillist" form="modal-details" class="btn btn-dark">Copy to clipboard</button>
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
             </div>
@@ -287,7 +289,7 @@ $lang = get_language();
                 </div><br>
             </div>
             <div class="modal-footer">
-                <a href="mailto:board@wjpf.org?bcc=<?php echo get_all_associations_emails();?>"><button type="button" form="modal-details" class="btn btn-dark">Open Bcc Email</button></a>
+                <a href="mailto:board@internationalpuzzle.org?bcc=<?php echo get_all_associations_emails();?>"><button type="button" form="modal-details" class="btn btn-dark">Open Bcc Email</button></a>
                 <button type="button" name="copyAllAssociationsMaillist" id="copyAllAssociationsMaillist" form="modal-details" class="btn btn-dark">Copy to clipboard</button>
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
             </div>

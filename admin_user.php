@@ -160,7 +160,7 @@ $lang = get_language();
                             <?php create_user_board_role_select('user_board_role', 'form-select', 1, true); ?>
                         </div>
                         <div class="col-12 col-lg-4 mb-3" id="user_wjpf_email_frame">
-                            <label for="user_wjpf_email">WJPF Email</label>
+                            <label for="user_wjpf_email">IJPA Email</label>
                             <input type="email" name="user_wjpf_email" id="user_wjpf_email" class="form-control" maxlength="70">
                         </div>
                         <div class="col-12 col-lg-4 mb-3">

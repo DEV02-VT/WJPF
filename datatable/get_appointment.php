@@ -20,6 +20,7 @@
 chdir('..');
 require_once "includes/init.php";
 include_once("includes/functions_appointment.php");
+include_once("includes/functions_association_admin.php");
 /*
 require_once "../defines.php";
 require_once "../settings/config.php";
@@ -62,15 +63,18 @@ $columns = array(
     array( 'db' => 'author_id', 'dt' => 2, 'formatter' => function( $d, $row ) {
 		return get_user_name($d);
 	}),
-    array( 'db' => 'headline', 'dt' => 3),
-    array( 'db' => 'link', 'dt' => 4, 'formatter' => function( $d, $row ) {
+    array( 'db' => 'association_id', 'dt' => 3, 'formatter' => function( $d, $row ) {
+			return get_association_name($d);
+		}),
+    array( 'db' => 'headline', 'dt' => 4),
+    array( 'db' => 'link', 'dt' => 5, 'formatter' => function( $d, $row ) {
 		return '<a href="' . $d . ' " target="_blank">' . substr($d, 0, 20) . '</a>';
 	}),
-    array( 'db' => 'place', 'dt' => 5),
-    array( 'db' => 'id', 'dt' => 6 , 'formatter' => function( $d, $row ) {
+    array( 'db' => 'place', 'dt' => 6),
+    array( 'db' => 'id', 'dt' => 7 , 'formatter' => function( $d, $row ) {
 		$buttons = '<div style="display:flex">';
 		$buttons .= '<img class="table_button edit_appointment"  src="img/edit.png  " data-id="' . $d . '" title="Termin bearbeiten">';
-		$buttons .= '<img class="table_button delete_appointment"  src="img/trash.png" data-bs-toggle="modal" data-bs-target="#deleteAppointmentModal"  data-id="' . $d . '"  data-name="' . $row[3] . '" title="Termin löschen">';
+		$buttons .= '<img class="table_button delete_appointment"  src="img/trash.png" data-bs-toggle="modal" data-bs-target="#deleteAppointmentModal"  data-id="' . $d . '"  data-name="' . $row[4] . '" title="Termin löschen">';
 		$buttons .= '</div>';
 		return $buttons;
 	} ),
@@ -87,6 +91,19 @@ $sql_details = array(
 );
  
 $where = '';
+// Association admins (neither board nor global admin) only see appointments of their own associations.
+if (!user_is_admin() && !user_is_board_user())
+{
+    $ids = get_association_ids_for_user(get_login_user_id());
+    if (count($ids) == 0)
+    {
+        $where = '0';
+    }
+    else
+    {
+        $where = 'association_id IN (' . implode(',', array_map('intval', $ids)) . ')';
+    }
+}
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  * If you just want to use the basic configuration for DataTables with PHP

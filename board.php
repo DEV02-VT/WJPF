@@ -18,7 +18,7 @@ include_once("includes/nav_base.php");
 <div class="text-block"  id="board">
     <div class="row justify-content-center text-center">
         <div class="col-11 col-sm-9  col-md-7">
-            <p>The WJPF is managed by a board of 9 people who were elected at the General Assembly by the representatives of each member association. You can contact each member of the board directly or via the central E-Mail <a href="mailto:board@wjpf.org">board@wjpf.org</img></a></p>
+            <p>The IJPA is managed by a board of 9 people who were elected at the General Assembly by the representatives of each member association. You can contact each member of the board directly or via the central E-Mail <a href="mailto:board@internationalpuzzle.org">board@internationalpuzzle.org</img></a></p>
         </div>
     </div>
 

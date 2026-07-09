@@ -26,6 +26,12 @@ function get_federation_associations()
     return $ret;
 
 }
+
+function get_all_associations()
+{
+    $sql = "SELECT id, name from association ORDER BY name";
+    return query_array($sql);
+}
 function get_association_by_email($email)
 {
     $email = trim(escape($email));

@@ -14,7 +14,7 @@ if ($action == '') {
     return;
 }
 
-if (!user_is_admin() && !user_is_board_user()) {
+if (!user_is_admin() && !user_is_board_user() && !user_is_association_admin()) {
     $retdata['error'] = 'No rights!';
     echo json_encode($retdata);
     return;
@@ -48,7 +48,13 @@ switch ($action) {
             echo json_encode($retdata);
             return;
         }
-        $retdata['admin'] = get_association_admin($id);
+        $admin = get_association_admin($id);
+        if (empty($admin) || !user_can_edit_association($admin['association_id'])) {
+            $retdata['error'] = 'No rights!';
+            echo json_encode($retdata);
+            return;
+        }
+        $retdata['admin'] = $admin;
         break;
 
     case 'Set':
@@ -57,6 +63,21 @@ switch ($action) {
             $retdata['error'] = $error;
             echo json_encode($retdata);
             return;
+        }
+
+        // Association admins may only manage administrators of their own associations.
+        if (!user_can_edit_association($data['association_id'])) {
+            $retdata['error'] = 'No rights!';
+            echo json_encode($retdata);
+            return;
+        }
+        if ($data['admin_id'] != -1) {
+            $existing_admin = get_association_admin($data['admin_id']);
+            if (empty($existing_admin) || !user_can_edit_association($existing_admin['association_id'])) {
+                $retdata['error'] = 'No rights!';
+                echo json_encode($retdata);
+                return;
+            }
         }
 
         $user_id = $data['user_id'];
@@ -140,6 +161,12 @@ switch ($action) {
         $id = decode(filter_input(INPUT_POST, "id"));
         if ($id == '') {
             $retdata['error'] = 'Invalid parameter: id';
+            echo json_encode($retdata);
+            return;
+        }
+        $admin = get_association_admin($id);
+        if (empty($admin) || !user_can_edit_association($admin['association_id'])) {
+            $retdata['error'] = 'No rights!';
             echo json_encode($retdata);
             return;
         }

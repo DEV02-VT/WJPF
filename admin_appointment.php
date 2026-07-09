@@ -1,8 +1,10 @@
 <?php
 include_once("includes/header.php");
 include_once("includes/nav_base.php");
+include_once("includes/functions_appointment.php");
+include_once("includes/functions_association_admin.php");
 
-CheckBoardUserOrAdmin();
+CheckBoardAdminOrAssociationAdmin();
 $lang = get_language();
 ?>
    
@@ -32,6 +34,7 @@ $lang = get_language();
          <th>Start</th>
          <th>End</th>
          <th>Author</th>
+         <th>Association</th>
          <th>Titel</th>
          <th>Link</th>
          <th>Place</th>
@@ -61,6 +64,10 @@ $lang = get_language();
                                 <label for="appointment-type">Type</label>
                                 <?php create_appointment_type_select('appointment-type', 'form-select', 1, true); ?>
                             </div>
+                            <div class="col-12 col-lg-8 mb-2" id="appointment-association-frame">
+                                <label for="appointment-association_id">Association *</label>
+                                <?php create_association_select('appointment-association_id', 'form-select', get_appointment_associations_for_current_user(), '', true); ?>
+                            </div>
                             <div class="col-12 col-md-4 mb-3" id="appointment-begin-frame">
                                 <label for="appointment-begin">Start *</label>
                                 <input type="date" name="appointment-begin" id="appointment-begin" class="form-control" required  autofocus>
@@ -71,15 +78,15 @@ $lang = get_language();
                             </div>
                             <div class="col-12 mb-3" id="appointment-headline-frame">
                                 <label for="appointment-headline">Titel *</label>
-                                <input type="text" name="appointment-headline" id="appointment-headline" class="form-control" maxlength="255" placeholder="Überschrift" required>
+                                <input type="text" name="appointment-headline" id="appointment-headline" class="form-control" maxlength="255" required>
                             </div>
                             <div class="col-12  mb-3" id="appointment-link-frame">
                                 <label for="appointment-link" class="form-label">Link</label>
-                                <input type="url" name="appointment-link" id="appointment-link" class="form-control" placeholder="Link">
+                                <input type="url" name="appointment-link" id="appointment-link" class="form-control" >
                             </div>
                             <div class="col-12 mb-3" id="appointment-place-frame">
                                 <label for="appointment-place">Place</label>
-                                <input type="text" name="appointment-place" id="appointment-place" class="form-control" maxlength="255" placeholder="Ort" >
+                                <input type="text" name="appointment-place" id="appointment-place" class="form-control" maxlength="255" >
                             </div>
                             <div class="col-12 block-titel">Address</div>
                             <div class="col-9 col-lg-4 mb-2" id="appointment-street_frame">
@@ -95,7 +102,7 @@ $lang = get_language();
                                 <input type="text" name="appointment-zip" id="appointment-zip" class="form-control" maxlength="10">
                             </div>
                             <div class="col-9 col-lg-4 mb-2" id="appointment-town-frame">
-                                <label for="appointment-town">Place</label>
+                                <label for="appointment-town">Town</label>
                                 <input type="text" name="appointment-town" id="appointment-town" class="form-control" maxlength="100">
                             </div>
                             <div class="col-12 col-lg-6 mb-2" id="appointment-country-code-frame">

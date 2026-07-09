@@ -14,7 +14,7 @@ $retdata['error'] = '';
 
 if ($action == '')
 {
-    $retdata['error'] = 'Ungültiger Parameter' . ' action';
+    $retdata['error'] = 'Invalid parameter' . ' action';
 	echo json_encode($retdata);
     return;
 }
@@ -30,7 +30,7 @@ switch ($action)
         }
         break;
     case 'Set':
-        if (!user_is_admin() and !user_is_board_user())
+        if (!user_is_admin() and !user_is_board_user() and !user_is_association_admin())
         {
             $retdata['error'] = 'No rights!';
             echo json_encode($retdata);
@@ -56,7 +56,7 @@ switch ($action)
 			echo json_encode($retdata);
 			return;
 		}
-        if (!user_is_admin() && !user_is_board_user() && $id != get_login_user_id())
+        if (!user_can_edit_association($id))
         {
             $retdata['error'] = 'No rights!';
             echo json_encode($retdata);
@@ -72,6 +72,17 @@ switch ($action)
         {
             echo json_encode($retdata);
             return;
+        }
+
+        // Association admins may only edit their own existing associations, not create new ones.
+        if (!user_is_admin() && !user_is_board_user())
+        {
+            if ($association['id'] <= 0 || !user_can_edit_association($association['id']))
+            {
+                $retdata['error'] = 'No rights!';
+                echo json_encode($retdata);
+                return;
+            }
         }
 
         $new_filename = '';
@@ -134,7 +145,7 @@ switch ($action)
 		delete_association($deleteid);
         break;
     default:
-        $retdata['error'] = 'Unbekannte Aktion ' . $action;
+        $retdata['error'] = 'Unknown action: ' . $action;
         break;
         
 }

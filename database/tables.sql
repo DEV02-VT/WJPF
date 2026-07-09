@@ -106,6 +106,7 @@ CREATE TABLE appointment
     begin		DATE,
     end			DATE,
     author_id   int,
+    association_id  int NULL,
     type	    int DEFAULT 1,
     street 	    varchar(100) NOT NULL,
     house_number    varchar(20) NOT NULL,
@@ -115,7 +116,8 @@ CREATE TABLE appointment
     latitude 	varchar(30),
     longitude 	varchar(30),
 
-    PRIMARY KEY (id)
+    PRIMARY KEY (id),
+    constraint `fk_appointment_association` foreign key (association_id) references association (id) on delete set null
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE news (

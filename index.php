@@ -10,8 +10,8 @@ include_once("includes/nav_base.php");
 	<div class="caption_intro">
 		<div class="row justify-content-center">
 			<div class="col-11  col-md-9 col-lg-7 border text-center">
-                <h2>International Jigsaw Puzzle Association (WJPF)</h2>
-<!--   <img src="img/logo_wjpf.png" width="100%" class="d-inline-block align-top" alt=""> -->
+                <h2>International Jigsaw Puzzle Association (IJPA)</h2>
+<!--   <img src="img/logo_ijpa.png" width="100%" class="d-inline-block align-top" alt=""> -->
             </div>
         </div>
     </div>
@@ -21,9 +21,9 @@ include_once("includes/nav_base.php");
 
 
    <div class="text-block">
-     <h3 style="text-align:center;">What is WJPF</h3>
+     <h3 style="text-align:center;">What is IJPA</h3>
      <p>The International Jigsaw Puzzle Association was founded in 2026 from puzzle enthusiasts from all over the world. A Association to coordinate competitive puzzling and to connect, represent, and unite all the different associations.
-   The committee recognizes maximum 1 not-for-profit Jigsaw Puzzle Association (JPA) per country. Member JPAs share and follow the objectives that are laid out by the WJPF. Members can use the network of the WJPF for best practices and to learn from other associations.</p><p>
+   The committee recognizes maximum 1 not-for-profit Jigsaw Puzzle Association (JPA) per country. Member JPAs share and follow the objectives that are laid out by the IJPA. Members can use the network of the IJPA for best practices and to learn from other associations.</p><p>
 
            The Federation's main objectives will be:<br>
            <div class="row justify-content-center">
@@ -49,7 +49,7 @@ include_once("includes/nav_base.php");
         <div class="row justify-content-center">
             <div class="col-11  col-md-9 col-lg-7 border text-center">
                 <h2>News</h2>
-                <!--   <img src="img/logo_wjpf.png" width="100%" class="d-inline-block align-top" alt=""> -->
+                <!--   <img src="img/logo_ijpa.png" width="100%" class="d-inline-block align-top" alt=""> -->
             </div>
         </div>
     </div>
