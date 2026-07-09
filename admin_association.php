@@ -237,7 +237,7 @@ $lang = get_language();
                 </div><br>
             </div>
             <div class="modal-footer">
-                <a href="mailto:board@internationalpuzzle.org?bcc=<?php echo get_member_associations_emails();?>"><button type="button" form="modal-details" class="btn btn-dark">Open Bcc Email</button></a>
+                <a href="mailto:board@internationaljigsawpuzzle.org?bcc=<?php echo get_member_associations_emails();?>"><button type="button" form="modal-details" class="btn btn-dark">Open Bcc Email</button></a>
                 <button type="button" name="copyMemberMaillist" id="copyMemberMaillist" form="modal-details" class="btn btn-dark">Copy to clipboard</button>
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
             </div>
@@ -263,7 +263,7 @@ $lang = get_language();
                 </div><br>
             </div>
             <div class="modal-footer">
-                <a href="mailto:board@internationalpuzzle.org?bcc=<?php echo get_non_member_associations_emails();?>"><button type="button" form="modal-details" class="btn btn-dark">Open Bcc Email</button></a>
+                <a href="mailto:board@internationaljigsawpuzzle.org?bcc=<?php echo get_non_member_associations_emails();?>"><button type="button" form="modal-details" class="btn btn-dark">Open Bcc Email</button></a>
                 <button type="button" name="copyNonMemberMaillist" id="copyNonMemberMaillist" form="modal-details" class="btn btn-dark">Copy to clipboard</button>
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
             </div>
@@ -289,7 +289,7 @@ $lang = get_language();
                 </div><br>
             </div>
             <div class="modal-footer">
-                <a href="mailto:board@internationalpuzzle.org?bcc=<?php echo get_all_associations_emails();?>"><button type="button" form="modal-details" class="btn btn-dark">Open Bcc Email</button></a>
+                <a href="mailto:board@internationaljigsawpuzzle.org?bcc=<?php echo get_all_associations_emails();?>"><button type="button" form="modal-details" class="btn btn-dark">Open Bcc Email</button></a>
                 <button type="button" name="copyAllAssociationsMaillist" id="copyAllAssociationsMaillist" form="modal-details" class="btn btn-dark">Copy to clipboard</button>
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
             </div>

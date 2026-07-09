@@ -3,7 +3,7 @@
     <div class="caption" id="championships">
         <div class="row justify-content-center">
             <div class="col-11 col-md-9 col-lg-8 border text-center">
-                <span class="capital">Contact us</span><a href="mailto:board@internationalpuzzle.org"><img src="img/mail_blue.png" class="social_img"></img></a>
+                <span class="capital">Contact us</span><a href="mailto:board@internationaljigsawpuzzle.org"><img src="img/mail_blue.png" class="social_img"></img></a>
             </div>
         </div>
     </div>

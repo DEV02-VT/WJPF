@@ -54,7 +54,7 @@ else
                     With your user account, you can access internal federation data. To log in, your account must be activated and a password created.
 					<br><br>To activate your user access, you need to enter the email address and click the 'Activate user' button. You will then receive an email containing a link to confirm your registration and set a password. Once you have entered a password, your access will be activated.
 
-					<br><br>If you encounter any problems during registration, please send an email to <span class="secondary">michael.smit@internationalpuzzle.org</span>.<br>
+					<br><br>If you encounter any problems during registration, please send an email to <span class="secondary">michael.smit@internationaljigsawpuzzle.org</span>.<br>
 			</div>
 		</div>
 		<div class="col-12 col-sm-8 col-md-6 col-xl-4 alert alert-filter">
