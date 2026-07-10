@@ -727,6 +727,17 @@ opacity: 0.36;
     border-color: var(--grundfarbe-dunkelblau_shadow);
 }
 
+.statutes-language.active {
+    background-color: var(--grundfarbe-gruen);
+    border-color: var(--grundfarbe-gruen);
+}
+
+.statutes-pdf {
+    width: 100%;
+    height: 80vh;
+    min-height: 400px;
+}
+
 .marker_meeting {
     /*	background-image: url(../img/meeting_marker.png);
         background-size: contain;*/

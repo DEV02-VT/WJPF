@@ -24,6 +24,7 @@
                     <ul class="dropdown-menu" aria-labelledby="navbarAdminDropdown">
                         <li><a class="dropdown-item" href="board.php">Board</a></li>
                         <li><a class="dropdown-item" href="news.php">News</a></li>
+                        <li><a class="dropdown-item" href="statutes.php">Statutes</a></li>
                     </ul>
                 </li>
                 <?php if (user_is_admin() || user_is_board_user() || user_is_association_admin()){ ?>
