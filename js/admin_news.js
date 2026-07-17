@@ -1,3 +1,12 @@
+// Bootstrap's modal focus trap steals focus from TinyMCE dialogs (e.g. the
+// link dialog), making their inputs untypable. Let focus events targeting
+// TinyMCE UI pass before Bootstrap's focusin handler sees them.
+document.addEventListener('focusin', function (e) {
+    if (e.target.closest('.tox-tinymce, .tox-tinymce-aux, .moxman-window, .tam-assetmanager-root') !== null) {
+        e.stopImmediatePropagation();
+    }
+});
+
 $(document).ready(function () {
 
     var pendingContent = '';
