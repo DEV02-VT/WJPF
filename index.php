@@ -5,6 +5,54 @@ include_once("includes/header.php");
 include_once("includes/nav_base.php");
 ?>
 
+<?php
+$logo_competition_today = (new DateTime('now', new DateTimeZone('Europe/Berlin')))->format('Y-m-d');
+if ($logo_competition_today >= '2026-08-01' && $logo_competition_today <= '2026-08-31'):
+?>
+    <?php $logo_examples = glob("img/logo/*.{png,jpg,jpeg,gif,webp,svg}", GLOB_BRACE); ?>
+    <div class="row justify-content-center m-0">
+        <div class="col-11 col-md-9 col-lg-7 text-center mt-3 mb-3">
+            <div class="alert alert-dark border mb-0">
+                <?php if (count($logo_examples) > 0): ?>
+                    <style>
+                        .logo-banner-tile {
+                            width: 3.5rem;
+                            height: 3.5rem;
+                            display: inline-flex;
+                            align-items: center;
+                            justify-content: center;
+                            background: #fff;
+                            padding: 0.25rem;
+                        }
+                        .logo-banner-tile img {
+                            max-width: 100%;
+                            max-height: 100%;
+                            object-fit: contain;
+                        }
+                        .logo-banner-question {
+                            font-size: 1.75rem;
+                            font-weight: bold;
+                            line-height: 1;
+                        }
+                    </style>
+                    <div class="d-flex justify-content-center align-items-center gap-2 flex-wrap mb-2">
+                        <?php foreach ($logo_examples as $logo_example): ?>
+                            <div class="border logo-banner-tile">
+                                <img src="<?= htmlspecialchars($logo_example) ?>" alt="Logo example">
+                            </div>
+                        <?php endforeach; ?>
+                        <div class="border logo-banner-tile">
+                            <span class="logo-banner-question">?</span>
+                        </div>
+                    </div>
+                <?php endif; ?>
+                <strong>IJPA Logo Design Competition</strong> &ndash; submit your design by 31st August 2026!
+                <a href="logo_competition.php" class="btn btn-dark btn-sm ms-2">Learn more</a>
+            </div>
+        </div>
+    </div>
+<?php endif; ?>
+
 <div class="bgimg_1 parallax">
 
 	<div class="caption_intro">
