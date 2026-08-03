@@ -148,9 +148,17 @@ include_once("includes/nav_base.php");
     </div>
 
     <div class="row text-center justify-content-center  mt-5">
-        <div class="col-12 col-md-8 col-lg-6">
-        <h3>Are you interested in hosting a World Championship? We are currently working a proposal system.</h3>
-    </div>
+        <div class="col-12 col-md-10 col-lg-8 border">
+            <h3><b>Are you interested in hosting a World Championship?</b></h3>
+            <p class="mt-3">
+            <h4>Download our Guidelines and the Application Form. Please send the completed application form to
+                <a href="mailto:board@internationaljigsawpuzzle.org">board@internationaljigsawpuzzle.org</a>. If you have any questions, please feel free to contact us at any time.</h4>
+            </p>
+            <div class="mt-5 mb-3">
+                <a class="btn btn-dark btn-sm me-2" href="documents/IJPA_Application_Guidelines_v1.pdf" download>Download Guidelines</a>
+                <a class="btn btn-dark btn-sm" href="documents/IJPA_Hosting_Interactive_Application_Form_v1.pdf" download>Download Application Form</a>
+            </div>
+        </div>
     </div>
 
 </div>
