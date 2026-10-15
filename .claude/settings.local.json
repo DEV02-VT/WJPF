@@ -7,7 +7,11 @@
       "PowerShell(& \"C:\\\\xampp\\\\mysql\\\\bin\\\\mysql.exe\" -u root wjpf -e $sql 2>&1)",
       "PowerShell($sql = \"UPDATE news SET content = REPLACE\\(REPLACE\\(REPLACE\\(REPLACE\\(content, '&lt;', '<'\\), '&gt;', '>'\\), '&amp;', '&'\\), '&quot;', '`'\\) WHERE content LIKE '%&lt;%'\")",
       "PowerShell(if \\($?\\) { \"OK\" })",
-      "Bash(git add *)"
+      "Bash(git add *)",
+      "Bash(php -l C:/xampp/htdocs/wjpf/logo_competition.php)",
+      "Bash(php -l C:/xampp/htdocs/wjpf/index.php)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost/wjpf/logo_competition.php)",
+      "Bash(curl -s http://localhost/wjpf/logo_competition.php)"
     ]
   }
 }
