@@ -57,9 +57,10 @@ if ($logo_competition_today >= '2026-08-01' && $logo_competition_today <= '2026-
 
 	<div class="caption_intro">
 		<div class="row justify-content-center">
-			<div class="col-11  col-md-9 col-lg-7 border text-center">
-                <h2>International Jigsaw Puzzle Association (IJPA)</h2>
-<!--   <img src="img/logo_ijpa.png" width="100%" class="d-inline-block align-top" alt=""> -->
+			<div class="col-auto border text-center">
+                <h1 class="m-0">
+                    <img src="img/logo_ijpa.png" class="hero_logo" alt="International Jigsaw Puzzle Association (IJPA)">
+                </h1>
             </div>
         </div>
     </div>

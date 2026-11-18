@@ -1,12 +1,12 @@
 :root {
 
 /* Colors: */
-    --grundfarbe-hellblau: #8ebbe5;
-    --grundfarbe-dunkelblau: #02335E;
-    --grundfarbe-gruen: #a1bf38;
-    --grundfarbe-dunkelblau_shadow: #01224D;
+    --grundfarbe-blau: #0169B7;
+    --grundfarbe-dunkelblau: #012F6B;
+    --grundfarbe-tuerkis: #07AAC1;
+    --grundfarbe-dunkelblau_shadow: #01244F;
 
-    --bs-border-color: #a1bf38;
+    --bs-border-color: #07AAC1;
     --bs-border-width: 3px;
 
 --text-color: #2B2B2B;
@@ -26,7 +26,7 @@
     --secundary-color: #5B8284;
     --ss-primary-color: #5B8284;
     */
---secundary-color: #a1bf38;
+--secundary-color: #0169B7;
 --ss-primary-color: #E5539C;
 
 
@@ -35,7 +35,7 @@
 --secondary-font-family: dejavu_sansbook;
 --secondary-font-bold: dejavu_sansbold;
 
-    --bs-navbar-color: var(--grundfarbe-hellblau);
+    --bs-navbar-color: var(--grundfarbe-blau);
 }
 
 body, html {
@@ -50,14 +50,14 @@ body, html {
 
 .navbar {
     background-color: var(--grundfarbe-hell);
-    color: var(--grundfarbe-hellblau);
+    color: var(--grundfarbe-blau);
 }
 .navbar-toggler {
-    color: var(--grundfarbe-hellblau);
+    color: var(--grundfarbe-blau);
 }
 .nav-link {
     font-size: 2em;
-    color: var(--grundfarbe-hellblau);
+    color: var(--grundfarbe-blau);
     font-weight: bold;
 }
 
@@ -65,18 +65,18 @@ body, html {
 .nav-link:focus,
 .nav-link.show,
 .nav-link.dropdown-toggle.show {
-    color: var(--grundfarbe-hellblau);
+    color: var(--grundfarbe-blau);
 }
 
 .navbar-nav .nav-link.active,
 .navbar-nav .nav-link.show {
-    color: var(--grundfarbe-hellblau);
+    color: var(--grundfarbe-blau);
 }
 
 /* Popup-/Dropdown-Menüs an das Seiten-Design angepasst */
 .navbar .dropdown-menu {
     background-color: var(--grundfarbe-hell);
-    border: var(--bs-border-width) solid var(--grundfarbe-gruen);
+    border: var(--bs-border-width) solid var(--grundfarbe-tuerkis);
     border-radius: 17px;
     box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175);
     padding: 0.5rem;
@@ -84,7 +84,7 @@ body, html {
 }
 
 .navbar .dropdown-menu .dropdown-item {
-    color: var(--grundfarbe-hellblau);
+    color: var(--grundfarbe-blau);
     font-weight: bold;
     font-size: 1.2em;
     border-radius: 10px;
@@ -99,7 +99,7 @@ body, html {
 }
 
 .navbar .dropdown-menu hr {
-    border-top: 1px solid var(--grundfarbe-gruen);
+    border-top: 1px solid var(--grundfarbe-tuerkis);
     opacity: 0.5;
     margin: 0.4rem 0.5rem;
 }
@@ -152,17 +152,30 @@ position: absolute;
 left: 0;
 width: 100%;
 text-align: center;
-color: var(--grundfarbe-gruen);
+color: var(--grundfarbe-blau);
 padding: 20px;
 }
 
 .caption_intro div.border {
 background-color: var(--grundfarbe-hell);
-color: var(--grundfarbe-gruen);
+color: var(--grundfarbe-blau);
 padding: 18px;
 font-size: 40px;
 letter-spacing: 10px;
 border-radius: 17px;
+}
+
+/* Square logo: limited to its native 480px, the viewport and the hero height */
+.hero_logo {
+display: block;
+width: min(300px, 100vw - 96px);
+height: auto;
+}
+
+@media all and (min-width: 576px) {
+.hero_logo {
+    width: min(480px, 70vh);
+}
 }
 
 .caption{
@@ -177,7 +190,7 @@ padding: 2px;
 
 .caption div.border {
 background-color: var(--grundfarbe-hell);
-color: var(--grundfarbe-gruen);
+color: var(--grundfarbe-blau);
 padding: 18px;
 font-size: 40px;
 letter-spacing: 10px;
@@ -186,16 +199,16 @@ border-radius: 17px;
 
 .capital{
  font-size: 1.5rem;
- color: var(--grundfarbe-hellblau);
+ color: var(--grundfarbe-blau);
  font-weight: bold;
 }
 
 .capital_dark{
-color: var(--grundfarbe-gruen);
+color: var(--grundfarbe-blau);
 }
 
 .dark_date{
-color: var(--grundfarbe-gruen);
+color: var(--grundfarbe-blau);
 font-size: 20px;
 font-weight: bold;
 }
@@ -361,7 +374,7 @@ min-height: 250px;
 /* Vorstands-Kacheln an das Seiten-Design angepasst */
 .board-tiles .user_frame {
     background-color: #ffffff;
-    border: var(--bs-border-width) solid var(--grundfarbe-gruen);
+    border: var(--bs-border-width) solid var(--grundfarbe-tuerkis);
     transition: transform .2s ease, box-shadow .2s ease;
     margin-bottom: 0;
     width: 100%;
@@ -369,7 +382,7 @@ min-height: 250px;
 
 .board-tiles .user_frame:hover {
     transform: translateY(-6px);
-    box-shadow: 0 1.5rem 3.5rem rgba(2, 51, 94, .25) !important;
+    box-shadow: 0 1.5rem 3.5rem rgba(1, 47, 107, .25) !important;
 }
 
 .board-tiles .user_frame_image {
@@ -381,7 +394,7 @@ min-height: 250px;
     width: 150px;
     object-fit: cover;
     border-radius: 12px;
-    border: 3px solid var(--grundfarbe-hellblau);
+    border: 3px solid var(--grundfarbe-blau);
     box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, .15);
     background-color: var(--grundfarbe-hell);
 }
@@ -398,9 +411,9 @@ min-height: 250px;
     line-height: 1.2;
 }
 
-/* Rolle (3. Kind der Zeile): in Markengrün */
+/* Rolle (3. Kind der Zeile): in Markenblau */
 .board-tiles .user_frame > .user_frame_name:nth-child(3) b {
-    color: var(--grundfarbe-gruen);
+    color: var(--grundfarbe-blau);
     text-transform: uppercase;
     letter-spacing: 1px;
     font-size: 0.95em;
@@ -472,7 +485,6 @@ font-weight: bold;
 border: none;
 outline: none;
 color: white;
-color: #555;
 cursor: pointer;
 padding: 0px 15px;
 border-radius: 4px;
@@ -480,12 +492,12 @@ width: 50px;
 height: 50px;
 line-height: 60px;
 transition: box-shadow .2s;
-background-color: var(--grundfarbe-hellblau);
+background-color: var(--grundfarbe-blau);
 }
 
 #topBtn:hover {
-background-color: #555;
-color: var(--grundfarbe-hellblau);
+background-color: var(--grundfarbe-dunkelblau);
+color: var(--grundfarbe-hell);
 box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
@@ -496,8 +508,8 @@ font-size: 22px;
 }
 
 #topBtn:active{
-background-color: #555;
-color: var(--grundfarbe-hellblau);
+background-color: var(--grundfarbe-dunkelblau);
+color: var(--grundfarbe-hell);
 box-shadow: none;
 }
 
@@ -728,8 +740,8 @@ opacity: 0.36;
 }
 
 .statutes-language.active {
-    background-color: var(--grundfarbe-gruen);
-    border-color: var(--grundfarbe-gruen);
+    background-color: var(--grundfarbe-blau);
+    border-color: var(--grundfarbe-blau);
 }
 
 .statutes-pdf {
@@ -785,7 +797,7 @@ opacity: 0.36;
 }
 
 .appointment-inner{
-    border: 2px solid var(--grundfarbe-gruen);
+    border: 2px solid var(--grundfarbe-tuerkis);
     width: 18em;
     border-radius: 12px;
     padding: 8px;
@@ -800,9 +812,9 @@ opacity: 0.36;
     background-color: rgba(6, 224, 107, .2);
 }*/
 .appointment-inner:hover {
-    border-color: var(--grundfarbe-hellblau);
+    border-color: var(--grundfarbe-blau);
     transform: translateY(-5px);
-    box-shadow: 0 1rem 2.5rem rgba(2, 51, 94, .2);
+    box-shadow: 0 1rem 2.5rem rgba(1, 47, 107, .2);
 }
 .appointment a{
     font-size: 12px;
